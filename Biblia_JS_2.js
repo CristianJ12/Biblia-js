@@ -1,5 +1,10 @@
-/*
-========================== OBJETO WINDOW ==========================
+// @ts-nocheck
+/* eslint-disable */
+// eslint-disable-next-line no-undef
+
+
+
+/*========================== OBJETO WINDOW ==========================
 El objeto `window` representa la ventana del navegador y contiene el documento DOM.
 Es el objeto global en un navegador web, lo que significa que las variables y funciones
 declaradas globalmente se convierten en propiedades y métodos del objeto window.
@@ -71,7 +76,7 @@ Ejemplo de especificaciones:
 - left, top (posición de la ventana)
 */
 
-let nuevaVentana = window.open("https://www.example.com", "NuevaVentana", "width=600,height=400");
+let nuevaVentana = window.open("https://www.example.com", "NuevaVentana", "width=600", "height=400");
 console.log("Nueva ventana abierta:", nuevaVentana);
 
 /*
@@ -83,8 +88,8 @@ Nota:
 */
 
 if (nuevaVentana) {
-  nuevaVentana.close();
-  console.log("La ventana se ha cerrado.");
+	nuevaVentana.close();
+	console.log("La ventana se ha cerrado.");
 }
 
 /* ========================= OTRAS PROPIEDADES ÚTILES ========================= */
@@ -135,7 +140,7 @@ Ejecuta una función después de un tiempo específico (en milisegundos).
 */
 
 setTimeout(() => {
-  console.log("Esto se ejecutó después de 3 segundos.");
+	console.log("Esto se ejecutó después de 3 segundos.");
 }, 3000);
 
 /*
@@ -149,12 +154,12 @@ Ejecuta una función repetidamente en intervalos de tiempo especificados.
 
 let contador = 0;
 let intervalo = setInterval(() => {
-  contador++;
-  console.log(`Intervalo ejecutado ${contador} veces.`);
-  if (contador === 5) {
-    clearInterval(intervalo); // Detiene el intervalo después de 5 ejecuciones
-    console.log("Intervalo detenido.");
-  }
+	contador++;
+	console.log(`Intervalo ejecutado ${contador} veces.`);
+	if (contador === 5) {
+		clearInterval(intervalo); // Detiene el intervalo después de 5 ejecuciones
+		console.log("Intervalo detenido.");
+	}
 }, 1000);
 
 /*
@@ -195,8 +200,8 @@ console.log(resultado); // Salida: La suma de 5 y 10 es 15.
 
 /*
 1. Comparar Números
-Se utilizan operadores de comparación para determinar relaciones entre números.
-- Operadores:
+Se utilizan operadores de comparación para determinar rel7aciones entre números.
+- Operadores:7
   > : mayor que
   < : menor que
   >= : mayor o igual que
@@ -268,11 +273,11 @@ Para comparar los elementos de dos arrays, se debe iterar sobre ellos.
 */
 
 function arraysIguales(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false; // Longitudes diferentes
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) return false; // Diferencia encontrada
-  }
-  return true;
+	if (arr1.length !== arr2.length) return false; // Longitudes diferentes
+	for (let i = 0; i < arr1.length; i++) {
+		if (arr1[i] !== arr2[i]) return false; // Diferencia encontrada
+	}
+	return true;
 }
 
 console.log(arraysIguales(array1, array2)); // true
@@ -289,7 +294,6 @@ let obj1 = { nombre: "Juan", edad: 30 };
 let obj2 = { nombre: "Juan", edad: 30 };
 let obj3 = obj1;
 
-console.log(obj1 == obj2);  // false (distintas referencias)
 console.log(obj1 === obj2); // false
 console.log(obj1 == obj3);  // true (misma referencia)
 console.log(obj1 === obj3); // true
@@ -300,15 +304,15 @@ Para comparar propiedades y valores de dos objetos, se debe verificar clave por 
 */
 
 function objetosIguales(objA, objB) {
-  let clavesA = Object.keys(objA);
-  let clavesB = Object.keys(objB);
+	let clavesA = Object.keys(objA);
+	let clavesB = Object.keys(objB);
 
-  if (clavesA.length !== clavesB.length) return false; // Diferentes cantidades de claves
+	if (clavesA.length !== clavesB.length) return false; // Diferentes cantidades de claves
 
-  for (let clave of clavesA) {
-    if (objA[clave] !== objB[clave]) return false; // Diferencia encontrada
-  }
-  return true;
+	for (let clave of clavesA) {
+		if (objA[clave] !== objB[clave]) return false; // Diferencia encontrada
+	}
+	return true;
 }
 
 console.log(objetosIguales(obj1, obj2)); // true
@@ -362,7 +366,7 @@ console.log("Número aleatorio entre 0 y 1:", Math.random()); // Ejemplo: 0.1234
 Generar un número aleatorio entre un rango específico [min, max]
 */
 function numeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 console.log("Número aleatorio entre 1 y 100:", numeroAleatorio(1, 100));
 
@@ -484,8 +488,8 @@ console.log(`Día: ${dia}, Mes: ${mes}, Año: ${año}`);
 Descripción: Utiliza un array de nombres de meses.
 */
 const nombresMeses = [
-  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+	"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+	"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
 ];
 let nombreMes = nombresMeses[fecha.getMonth()];
 console.log(`Mes: ${nombreMes}`);
@@ -516,17 +520,17 @@ Descripción: Una fecha no válida devuelve NaN cuando se usa con `isNaN()`.
 */
 let fechaInvalida = new Date("2023-13-01");
 if (fechaInvalida instanceof Date && !isNaN(fechaInvalida)) {
-  console.log("La fecha es válida.");
+	console.log("La fecha es válida.");
 } else {
-  console.log("La fecha no es válida."); // Se ejecuta
+	console.log("La fecha no es válida."); // Se ejecuta
 }
 
 /*
 2. Validar formato dd/mm/YYYY o dd-mm-YYYY usando Regex
 */
 function esFechaValida(fecha) {
-  const regex = /^(0[1-9]|[12][0-9]|3[01])([\/-])(0[1-9]|1[012])\2\d{4}$/;
-  return regex.test(fecha);
+	const regex = /^(0[1-9]|[12][0-9]|3[01])([\/-])(0[1-9]|1[012])\2\d{4}$/;
+	return regex.test(fecha);
 }
 console.log("01/08/2023 es válida:", esFechaValida("01/08/2023")); // true
 
@@ -562,9 +566,9 @@ console.log(`Hora: ${hora}:${minutos}:${segundos}`);
 2. Añadir días a una fecha
 */
 function añadirDias(fecha, dias) {
-  let nuevaFecha = new Date(fecha);
-  nuevaFecha.setDate(nuevaFecha.getDate() + dias);
-  return nuevaFecha;
+	let nuevaFecha = new Date(fecha);
+	nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+	return nuevaFecha;
 }
 let nuevaFecha = añadirDias(fecha, 5);
 console.log("Fecha con 5 días más:", nuevaFecha);
@@ -573,7 +577,7 @@ console.log("Fecha con 5 días más:", nuevaFecha);
 3. Comparar si dos fechas son iguales (sin considerar hora)
 */
 function sonFechasIguales(f1, f2) {
-  return f1.toDateString() === f2.toDateString();
+	return f1.toDateString() === f2.toDateString();
 }
 console.log("Fechas iguales:", sonFechasIguales(new Date(), new Date()));
 
@@ -587,6 +591,47 @@ de texto en cadenas de JavaScript. Son potentes y se basan en una sintaxis espec
 */
 
 /* ========================== FORMAS DE CREAR UNA EXPRESIÓN REGULAR ========================== */
+console.log("Ejemplos de expresiones regulares en JavaScript:\n");
+
+console.log("/^abc/"); // Coincide con "abc" al inicio de la cadena
+console.log(/abc/); // Coincide con "abc" en cualquier parte de la cadena
+console.log("/a.b/"); // Coincide con "a" seguido de cualquier carácter y luego "b"
+console.log(/a.b/g); // Coincide con "a" seguido de cualquier carácter y luego "b", en toda la cadena
+
+console.log("\nCuantificadores:");
+console.log("/a*/"); // Coincide con 0 o más "a"
+console.log(/a+/); // Coincide con 1 o más "a"
+console.log("/a?/"); // Coincide con 0 o 1 "a"
+console.log("/a{2}/"); // Coincide con exactamente 2 "a"
+console.log("/a{2,}/"); // Coincide con 2 o más "a"
+console.log("/a{2,4}/"); // Coincide con entre 2 y 4 "a"
+
+console.log("\nMetacaracteres:");
+console.log("/\\d/"); // Coincide con un dígito (0-9)
+console.log("/\\D/"); // Coincide con cualquier carácter que no sea un dígito
+console.log("/\\w/"); // Coincide con cualquier carácter alfanumérico (letras, números, _)
+console.log("/\\W/"); // Coincide con cualquier carácter no alfanumérico
+console.log("/\\s/"); // Coincide con un espacio en blanco (espacios, tabuladores, saltos de línea)
+console.log("/\\S/"); // Coincide con cualquier carácter no blanco
+
+console.log("\nModificadores:");
+console.log("/a/g"); // Coincide con todas las "a" en la cadena (global)
+console.log("/a/i"); // Coincide con "a", sin importar mayúsculas o minúsculas (insensible a mayúsculas)
+console.log("/^abc/m"); // Coincide con "abc" al principio de cada línea (multilínea)
+
+console.log("\nAnclas:");
+console.log("/^abc/"); // Coincide con "abc" solo al inicio de la cadena
+console.log("/abc$/"); // Coincide con "abc" solo al final de la cadena
+
+console.log("\nGrupos y Alternancia:");
+console.log("/(abc|def)/"); // Coincide con "abc" o "def"
+console.log("/a(bc)/"); // Coincide con "a" seguido de "bc" y captura "bc"
+
+console.log("\nEscapes:");
+console.log("/\\./"); // Coincide con un punto literal "."
+console.log("/\\?/"); // Coincide con el carácter "?" literal
+console.log("/\\$/"); // Coincide con el carácter "$" literal
+console.log("/\\*/"); // Coincide con el carácter "*" literal
 
 /*
 1. Utilizando Literales de Regex (Recomendado para patrones estáticos)
@@ -736,15 +781,15 @@ La letra final debe coincidir con el resto del número % 23.
 */
 
 function validarDNI(dni) {
-  const regexDNI = /^[0-9]{8}[A-Z]$/i;
-  const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+	const regexDNI = /^[0-9]{8}[A-Z]$/i;
+	const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
 
-  if (regexDNI.test(dni)) {
-    const numero = parseInt(dni.slice(0, 8));
-    const letra = dni.charAt(8).toUpperCase();
-    return letra === letras[numero % 23];
-  }
-  return false;
+	if (regexDNI.test(dni)) {
+		const numero = parseInt(dni.slice(0, 8));
+		const letra = dni.charAt(8).toUpperCase();
+		return letra === letras[numero % 23];
+	}
+	return false;
 }
 
 console.log("¿DNI válido?:", validarDNI("12345678Z")); // true
@@ -983,7 +1028,7 @@ Recorrer una cadena utilizando bucle `for`
 
 let cadena = "JavaScript";
 for (let i = 0; i < cadena.length; i++) {
-  console.log(`Posición ${i}:`, cadena[i]);
+	console.log(`Posición ${i}:`, cadena[i]);
 }
 
 /*
@@ -991,7 +1036,7 @@ Recorrer una cadena usando `for...of`
 */
 
 for (let char of cadena) {
-  console.log("Carácter:", char);
+	console.log("Carácter:", char);
 }
 
 /* ========================== MÉTODOS AVANZADOS ========================== */
@@ -1036,8 +1081,8 @@ console.log("Ocurrencias de 'manzana':", ocurrencias); // 3
 */
 
 function esPalindromo(cadena) {
-  let limpia = cadena.toLowerCase().replace(/\s+/g, "").replace(/[^\w]/g, "");
-  return limpia === limpia.split("").reverse().join("");
+	let limpia = cadena.toLowerCase().replace(/\s+/g, "").replace(/[^\w]/g, "");
+	return limpia === limpia.split("").reverse().join("");
 }
 
 console.log("¿Es palíndromo 'Anita lava la tina'?:", esPalindromo("Anita lava la tina")); // true
@@ -1047,11 +1092,11 @@ console.log("¿Es palíndromo 'Anita lava la tina'?:", esPalindromo("Anita lava 
 */
 
 function crearSlug(titulo) {
-  return titulo
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
+	return titulo
+		.toLowerCase()
+		.trim()
+		.replace(/\s+/g, "-")
+		.replace(/[^\w-]/g, "");
 }
 
 console.log("Slug de título:", crearSlug("Hola Mundo! Bienvenidos a JS.")); // "hola-mundo-bienvenidos-a-js"
@@ -1096,12 +1141,12 @@ let numeros = ["10", "2", "30", "1", "25"];
 
 // Ordenar alfabéticamente (incorrecto)
 numeros.sort();
-console.log("Orden alfabético:", numeros); 
+console.log("Orden alfabético:", numeros);
 // Salida: ["1", "10", "2", "25", "30"]
 
 // Ordenar numéricamente (correcto)
 numeros.sort((a, b) => Number(a) - Number(b));
-console.log("Orden numérico:", numeros); 
+console.log("Orden numérico:", numeros);
 // Salida: ["1", "2", "10", "25", "30"]
 
 /* ========================== 3. Comparación Mixta (Texto y Números) ========================== */
@@ -1118,18 +1163,18 @@ Ejemplo:
 let datos = ["10", "2", "manzana", "1", "100", "naranja"];
 
 datos.sort((a, b) => {
-  let numA = parseFloat(a);
-  let numB = parseFloat(b);
+	let numA = parseFloat(a);
+	let numB = parseFloat(b);
 
-  // Comparar como números si ambos son válidos
-  if (!isNaN(numA) && !isNaN(numB)) {
-    return numA - numB;
-  } 
-  // Comparar alfabéticamente en caso contrario
-  return a.localeCompare(b);
+	// Comparar como números si ambos son válidos
+	if (!isNaN(numA) && !isNaN(numB)) {
+		return numA - numB;
+	}
+	// Comparar alfabéticamente en caso contrario
+	return a.localeCompare(b);
 });
 
-console.log("Orden mixto numérico y alfabético:", datos); 
+console.log("Orden mixto numérico y alfabético:", datos);
 // Salida: ["1", "2", "10", "100", "manzana", "naranja"]
 
 /* ========================== 4. Comparar Arrays Numéricos ========================== */
@@ -1141,11 +1186,11 @@ A continuación, se muestra una función personalizada para comparar dos arrays 
 */
 
 function compararArrays(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false; // Longitudes diferentes
-  for (let i = 0; i < arr1.length; i++) {
-    if (Number(arr1[i]) !== Number(arr2[i])) return false;
-  }
-  return true;
+	if (arr1.length !== arr2.length) return false; // Longitudes diferentes
+	for (let i = 0; i < arr1.length; i++) {
+		if (Number(arr1[i]) !== Number(arr2[i])) return false;
+	}
+	return true;
 }
 
 let array1 = ["1", "2", "3"];
@@ -1163,9 +1208,9 @@ En un array bidimensional, podemos ordenar según una columna específica.
 */
 
 let matriz = [
-  ["Juan", "25"],
-  ["Ana", "20"],
-  ["Luis", "30"]
+	["Juan", "25"],
+	["Ana", "20"],
+	["Luis", "30"]
 ];
 
 // Ordenar por edad (segunda columna)
@@ -1199,11 +1244,11 @@ console.log("Números ordenados del array mixto:", soloNumeros); // [5, 15, 20]
 let contador = { numeros: 0, texto: 0 };
 
 mezcla.forEach(item => {
-  if (!isNaN(item)) {
-    contador.numeros++;
-  } else {
-    contador.texto++;
-  }
+	if (!isNaN(item)) {
+		contador.numeros++;
+	} else {
+		contador.texto++;
+	}
 });
 
 console.log("Conteo de elementos:", contador);
@@ -1216,13 +1261,13 @@ console.log("Conteo de elementos:", contador);
 let datosMixtos = ["10", "manzana", "2", "naranja", "30"];
 
 datosMixtos.sort((a, b) => {
-  let numA = parseFloat(a);
-  let numB = parseFloat(b);
+	let numA = parseFloat(a);
+	let numB = parseFloat(b);
 
-  if (!isNaN(numA) && !isNaN(numB)) return numA - numB; // Números primero
-  if (!isNaN(numA)) return -1; // Prioridad para números
-  if (!isNaN(numB)) return 1;  // Prioridad para números
-  return a.localeCompare(b);   // Comparación alfabética
+	if (!isNaN(numA) && !isNaN(numB)) return numA - numB; // Números primero
+	if (!isNaN(numA)) return -1; // Prioridad para números
+	if (!isNaN(numB)) return 1;  // Prioridad para números
+	return a.localeCompare(b);   // Comparación alfabética
 });
 
 console.log("Números primero, luego texto:", datosMixtos);
@@ -1266,8 +1311,8 @@ console.log("Array aplanado:", arrayPlano); // [1, 2, 3, 4, 5, 6, 7]
 let frutas = ["manzana", "pera", "manzana", "uva", "pera", "manzana"];
 
 let contador = frutas.reduce((acumulador, fruta) => {
-  acumulador[fruta] = (acumulador[fruta] || 0) + 1;
-  return acumulador;
+	acumulador[fruta] = (acumulador[fruta] || 0) + 1;
+	return acumulador;
 }, {});
 
 console.log("Conteo de elementos:", contador);
@@ -1292,8 +1337,8 @@ Descripción: Sumar solo los números mayores a un valor específico.
 
 let numerosParaSumar = [10, 20, 5, 40, 15, 8];
 let sumaMayores = numerosParaSumar
-  .filter(numero => numero > 10) // Filtra números mayores a 10
-  .reduce((acumulador, numero) => acumulador + numero, 0); // Suma los valores
+	.filter(numero => numero > 10) // Filtra números mayores a 10
+	.reduce((acumulador, numero) => acumulador + numero, 0); // Suma los valores
 
 console.log("Suma de números mayores a 10:", sumaMayores); // 75
 
@@ -1322,13 +1367,79 @@ console.log("Primer número par encontrado:", primerPar); // 8
 /*
 8. Generar un array con números aleatorios únicos.
 */
+// 📌 Creación y manipulación de arrays
+let array = [1, 2, 3, 4, 5];
 
+// 🔹 Métodos de acceso Array metodos
+console.log(array.length);     // Longitud del array
+console.log(array[0]);        // Primer elemento
+console.log(array.at(-1));    // Último elemento
+
+// 🔹 Agregar y eliminar elementos
+array.push(6);          // Agrega al final
+array.pop();                 // Elimina el último
+array.unshift(0);       // Agrega al inicio
+array.shift();               // Elimina el primero
+
+// 🔹 Buscar en un array
+console.log(array.includes(3));  // true si contiene el valor
+console.log(array.indexOf(2));   // Índice del valor (o -1 si no está)
+console.log(array.lastIndexOf(2)); // Última ocurrencia del valor
+console.log(array.find(x => x > 3));  // Primer elemento > 3
+console.log(array.findIndex(x => x > 3));  // Índice del primer elemento > 3
+console.log(array.findLast(x => x > 3));  // Último elemento > 3
+console.log(array.findLastIndex(x => x > 3));  // Último índice del elemento > 3
+
+// 🔹 Filtrar y transformar
+let newArray = array.map(x => x * 2);   // Duplicar valores
+let filteredArray = array.filter(x => x > 2); // Filtrar valores mayores que 2 y los guarda en un nuevo array
+let sum = array.reduce((acc, x) => acc + x, 0); // Suma total
+let sumRight = array.reduceRight((acc, x) => acc + x, 0); // Suma de derecha a izquierda
+
+// 🔹 Evaluar condiciones
+console.log(array.some(x => x > 3));  // true si al menos un elemento cumple
+console.log(array.every(x => x > 3)); // true si todos los elementos cumplen
+
+// 🔹 Ordenar y modificar
+array.sort((a, b) => a - b);   // Ordenar numéricamente ascendente
+array.reverse();               // Invertir el array
+array.splice(2, 1);  // Elimina 1 elemento desde el índice 2
+let slicedArray = array.slice(1, 3); // Extrae sin modificar original
+
+// 🔹 Iterar sobre un array
+array.forEach(x => console.log(x)); // Iterar y mostrar cada elemento
+for (let [index, value] of array.entries()) console.log(index, value); // Iterar con índice y valor
+
+// 🔹 Convertir arrays
+console.log(array.join(', ')); // Convierte en string con separador
+console.log(Array.from('hello')); // Convierte string a array
+console.log(Array.isArray(array));  // Verifica si es un array
+
+// 🔹 Obtener iteradores
+let iterKeys = array.keys();  // Iterador de claves (índices)
+let iterValues = array.values(); // Iterador de valores
+let iterEntries = array.entries(); // Iterador de pares índice-valor
+
+// 🔹 Combinar y clonar
+let mergedArray = array.concat([6, 7, 8]);  // Unir arrays
+let copiedArray = [...array, ...arra2];  // Copia con spread operator y los concatena
+
+// 🔹 Llenar y modificar
+array.fill(0, 1, 3); // Rellena con 0 desde índice 1 hasta 3
+
+// 🔹 Métodos avanzados
+let flatArray = [[1, 2], [3, 4]].flat(); // Aplanar un nivel
+let deepFlatArray = [[[1]], [2, 3]].flat(Infinity); // Aplanar completamente
+// Agrupar por pares e impares (experimental, requiere polyfill en algunos navegadores)
+let groupedArray = Object.groupBy(array, x => x % 2 === 0 ? 'pares' : 'impares');
+
+console.log(array); // Resultado final
 function generarNumerosAleatorios(cantidad, max) {
-  let numeros = new Set();
-  while (numeros.size < cantidad) {
-    numeros.add(Math.floor(Math.random() * max) + 1);
-  }
-  return [...numeros];
+	let numeros = new Set();
+	while (numeros.size < cantidad) {
+		numeros.add(Math.floor(Math.random() * max) + 1);
+	}
+	return [...numeros];
 }
 
 let numerosAleatorios = generarNumerosAleatorios(5, 20);
@@ -1339,11 +1450,13 @@ console.log("Números aleatorios únicos:", numerosAleatorios);
 */
 
 let productos = [
-  { nombre: "Laptop", precio: 800 },
-  { nombre: "Celular", precio: 500 },
-  { nombre: "Tablet", precio: 300 },
-  { nombre: "Monitor", precio: 200 },
+	{ nombre: "Laptop", precio: 800 },
+	{ nombre: "Celular", precio: 500 },
+	{ nombre: "Tablet", precio: 300 },
+	{ nombre: "Monitor", precio: 200 },
 ];
+//ordenar array alfabeticamentew
+vehiculos.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
 // Ordenar por precio (ascendente)
 productos.sort((a, b) => a.precio - b.precio);
@@ -1366,9 +1479,9 @@ Salida:
 let calificaciones = [85, 90, 75, 60, 95, 55];
 
 let grupos = calificaciones.reduce((acumulador, calificacion) => {
-  let categoria = calificacion >= 70 ? "Aprobados" : "Reprobados";
-  acumulador[categoria] = (acumulador[categoria] || []).concat(calificacion);
-  return acumulador;
+	let categoria = calificacion >= 70 ? "Aprobados" : "Reprobados";
+	acumulador[categoria] = (acumulador[categoria] || []).concat(calificacion);
+	return acumulador;
 }, {});
 
 console.log("Agrupación de calificaciones:", grupos);
@@ -1392,10 +1505,10 @@ Descripción: Filtrar personas mayores de 25 años.
 */
 
 let personas = [
-  { nombre: "Juan", edad: 30 },
-  { nombre: "Ana", edad: 22 },
-  { nombre: "Luis", edad: 28 },
-  { nombre: "María", edad: 24 }
+	{ nombre: "Juan", edad: 30 },
+	{ nombre: "Ana", edad: 22 },
+	{ nombre: "Luis", edad: 28 },
+	{ nombre: "María", edad: 24 }
 ];
 
 let mayoresDe25 = personas.filter(persona => persona.edad > 25);
@@ -1476,9 +1589,9 @@ Descripción: Agrupar personas por edades mayores y menores de 30.
 */
 
 let agrupados = personas.reduce((resultado, persona) => {
-  let clave = persona.edad >= 30 ? "Mayores de 30" : "Menores de 30";
-  (resultado[clave] = resultado[clave] || []).push(persona);
-  return resultado;
+	let clave = persona.edad >= 30 ? "Mayores de 30" : "Menores de 30";
+	(resultado[clave] = resultado[clave] || []).push(persona);
+	return resultado;
 }, {});
 
 console.log("Personas agrupadas por edad:", agrupados);
@@ -1498,21 +1611,21 @@ Descripción: Crearemos una clase para gestionar arrays de personas.
 */
 
 class GestorPersonas {
-  constructor() {
-    this.personas = [];
-  }
+	constructor() {
+		this.personas = [];
+	}
 
-  agregarPersona(nombre, edad) {
-    this.personas.push({ nombre, edad });
-  }
+	agregarPersona(nombre, edad) {
+		this.personas.push({ nombre, edad });
+	}
 
-  eliminarPersonaPorNombre(nombre) {
-    this.personas = this.personas.filter(persona => persona.nombre !== nombre);
-  }
+	eliminarPersonaPorNombre(nombre) {
+		this.personas = this.personas.filter(persona => persona.nombre !== nombre);
+	}
 
-  mostrarPersonas() {
-    console.log("Lista de personas:", this.personas);
-  }
+	mostrarPersonas() {
+		console.log("Lista de personas:", this.personas);
+	}
 }
 
 // Uso de la clase GestorPersonas
@@ -1531,105 +1644,105 @@ Descripción: Ejemplos de creación de clases, validaciones, herencia, comparaci
 
 /* ========================== CLASE PERSONA ========================== */
 class Persona {
-  #dni;
+	#dni;
 
-  constructor(nombre, edad, dni) {
-    this.nombre = nombre;
-    this.edad = edad;
-    this.#dni = this.#validarDNI(dni) ? dni : null;
-  }
+	constructor(nombre, edad, dni) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.#dni = this.#validarDNI(dni) ? dni : null;
+	}
 
-  // Validar DNI (formato español: 8 dígitos + 1 letra)
-  #validarDNI(dni) {
-    const regex = /^[0-9]{8}[A-Za-z]$/;
-    const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-    if (regex.test(dni)) {
-      const numero = parseInt(dni.slice(0, 8), 10);
-      const letra = dni.charAt(8).toUpperCase();
-      return letra === letras.charAt(numero % 23);
-    }
-    return false;
-  }
+	// Validar DNI (formato español: 8 dígitos + 1 letra)
+	#validarDNI(dni) {
+		const regex = /^[0-9]{8}[A-Za-z]$/;
+		const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+		if (regex.test(dni)) {
+			const numero = parseInt(dni.slice(0, 8), 10);
+			const letra = dni.charAt(8).toUpperCase();
+			return letra === letras.charAt(numero % 23);
+		}
+		return false;
+	}
 
-  // Getters
-  getNombre() {
-    return this.nombre;
-  }
+	// Getters
+	getNombre() {
+		return this.nombre;
+	}
 
-  getEdad() {
-    return this.edad;
-  }
+	getEdad() {
+		return this.edad;
+	}
 
-  getDNI() {
-    return this.#dni;
-  }
+	getDNI() {
+		return this.#dni;
+	}
 
-  // Métodos
-  saludar() {
-    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
-  }
+	// Métodos
+	saludar() {
+		console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+	}
 
-  // Comparar dos personas
-  static compararPorEdad(persona1, persona2) {
-    return persona1.edad - persona2.edad;
-  }
+	// Comparar dos personas
+	static compararPorEdad(persona1, persona2) {
+		return persona1.edad - persona2.edad;
+	}
 }
 
 /* ========================== SUBCLASES: ALUMNO Y PROFESOR ========================== */
 class Alumno extends Persona {
-  constructor(nombre, edad, dni, curso) {
-    super(nombre, edad, dni);
-    this.curso = curso;
-  }
+	constructor(nombre, edad, dni, curso) {
+		super(nombre, edad, dni);
+		this.curso = curso;
+	}
 
-  saludar() {
-    console.log(`Hola, soy ${this.nombre}, alumno de ${this.curso}.`);
-  }
+	saludar() {
+		console.log(`Hola, soy ${this.nombre}, alumno de ${this.curso}.`);
+	}
 }
 
 class Profesor extends Persona {
-  constructor(nombre, edad, dni, asignatura) {
-    super(nombre, edad, dni);
-    this.asignatura = asignatura;
-  }
+	constructor(nombre, edad, dni, asignatura) {
+		super(nombre, edad, dni);
+		this.asignatura = asignatura;
+	}
 
-  saludar() {
-    console.log(`Hola, soy ${this.nombre}, profesor de ${this.asignatura}.`);
-  }
+	saludar() {
+		console.log(`Hola, soy ${this.nombre}, profesor de ${this.asignatura}.`);
+	}
 }
 
 /* ========================== CLASE ANIMAL ========================== */
 class Animal {
-  constructor(nombre, especie) {
-    this.nombre = nombre;
-    this.especie = especie;
-  }
+	constructor(nombre, especie) {
+		this.nombre = nombre;
+		this.especie = especie;
+	}
 
-  emitirSonido() {
-    console.log(`${this.nombre} hace un sonido.`);
-  }
+	emitirSonido() {
+		console.log(`${this.nombre} hace un sonido.`);
+	}
 }
 
 class Perro extends Animal {
-  constructor(nombre, raza) {
-    super(nombre, "perro");
-    this.raza = raza;
-  }
+	constructor(nombre, raza) {
+		super(nombre, "perro");
+		this.raza = raza;
+	}
 
-  emitirSonido() {
-    console.log(`${this.nombre} dice: ¡Guau!`);
-  }
+	emitirSonido() {
+		console.log(`${this.nombre} dice: ¡Guau!`);
+	}
 }
 
 class Gato extends Animal {
-  constructor(nombre, color) {
-    super(nombre, "gato");
-    this.color = color;
-  }
+	constructor(nombre, color) {
+		super(nombre, "gato");
+		this.color = color;
+	}
 
-  emitirSonido() {
-    console.log(`${this.nombre} dice: ¡Miau!`);
-  }
+	emitirSonido() {
+		console.log(`${this.nombre} dice: ¡Miau!`);
+	}
 }
 
 /* ========================== EJEMPLOS PRÁCTICOS ========================== */
@@ -1672,11 +1785,11 @@ let datosMixtos = [...personas, ...animales];
 // Mostrar información de personas y animales
 console.log("\nInformación de Datos Mixtos:");
 datosMixtos.forEach(obj => {
-  if (obj instanceof Persona) {
-    console.log(`Persona: ${obj.getNombre()} - ${obj.getEdad()} años`);
-  } else if (obj instanceof Animal) {
-    console.log(`Animal: ${obj.nombre} - Especie: ${obj.especie}`);
-  }
+	if (obj instanceof Persona) {
+		console.log(`Persona: ${obj.getNombre()} - ${obj.getEdad()} años`);
+	} else if (obj instanceof Animal) {
+		console.log(`Animal: ${obj.nombre} - Especie: ${obj.especie}`);
+	}
 });
 /*
 ========================== CLASE PUNTO2D Y FIGURA2D ==========================
@@ -1687,97 +1800,97 @@ como distancia, perímetro y área. Incluye comparaciones y ordenación.
 /* ========================== CLASE PUNTO2D ========================== */
 
 class Punto2D {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+	constructor(x, y) {
+		this.x = x;
+		this.y = y;
+	}
 
-  // Método para calcular la distancia entre dos puntos
-  static calcularDistancia(punto1, punto2) {
-    return Math.sqrt(Math.pow(punto2.x - punto1.x, 2) + Math.pow(punto2.y - punto1.y, 2));
-  }
+	// Método para calcular la distancia entre dos puntos
+	static calcularDistancia(punto1, punto2) {
+		return Math.sqrt(Math.pow(punto2.x - punto1.x, 2) + Math.pow(punto2.y - punto1.y, 2));
+	}
 
-  // Método para representar el punto como cadena
-  toString() {
-    return `(${this.x}, ${this.y})`;
-  }
+	// Método para representar el punto como cadena
+	toString() {
+		return `(${this.x}, ${this.y})`;
+	}
 }
 
 /* ========================== CLASE FIGURA2D ========================== */
 
 class Figura2D {
-  constructor(nombre) {
-    this.nombre = nombre;
-  }
+	constructor(nombre) {
+		this.nombre = nombre;
+	}
 
-  calcularArea() {
-    throw new Error("Método calcularArea() debe ser implementado por la subclase.");
-  }
+	calcularArea() {
+		throw new Error("Método calcularArea() debe ser implementado por la subclase.");
+	}
 
-  calcularPerimetro() {
-    throw new Error("Método calcularPerimetro() debe ser implementado por la subclase.");
-  }
+	calcularPerimetro() {
+		throw new Error("Método calcularPerimetro() debe ser implementado por la subclase.");
+	}
 
-  toString() {
-    return `Figura: ${this.nombre}`;
-  }
+	toString() {
+		return `Figura: ${this.nombre}`;
+	}
 }
 
 /* ========================== SUBCLASES: CÍRCULO Y RECTÁNGULO ========================== */
 
 // Clase Círculo (derivada de Figura2D)
 class Circulo extends Figura2D {
-  constructor(centro, radio) {
-    super("Círculo");
-    this.centro = centro; // Instancia de Punto2D
-    this.radio = radio;
-  }
+	constructor(centro, radio) {
+		super("Círculo");
+		this.centro = centro; // Instancia de Punto2D
+		this.radio = radio;
+	}
 
-  // Método para calcular el área
-  calcularArea() {
-    return Math.PI * Math.pow(this.radio, 2);
-  }
+	// Método para calcular el área
+	calcularArea() {
+		return Math.PI * Math.pow(this.radio, 2);
+	}
 
-  // Método para calcular el perímetro
-  calcularPerimetro() {
-    return 2 * Math.PI * this.radio;
-  }
+	// Método para calcular el perímetro
+	calcularPerimetro() {
+		return 2 * Math.PI * this.radio;
+	}
 
-  toString() {
-    return `Círculo con centro en ${this.centro.toString()} y radio ${this.radio}`;
-  }
+	toString() {
+		return `Círculo con centro en ${this.centro.toString()} y radio ${this.radio}`;
+	}
 }
 
 // Clase Rectángulo (derivada de Figura2D)
 class Rectangulo extends Figura2D {
-  constructor(punto1, punto2) {
-    super("Rectángulo");
-    this.punto1 = punto1; // Esquina superior izquierda
-    this.punto2 = punto2; // Esquina inferior derecha
-  }
+	constructor(punto1, punto2) {
+		super("Rectángulo");
+		this.punto1 = punto1; // Esquina superior izquierda
+		this.punto2 = punto2; // Esquina inferior derecha
+	}
 
-  // Métodos para calcular dimensiones
-  getAncho() {
-    return Math.abs(this.punto2.x - this.punto1.x);
-  }
+	// Métodos para calcular dimensiones
+	getAncho() {
+		return Math.abs(this.punto2.x - this.punto1.x);
+	}
 
-  getAlto() {
-    return Math.abs(this.punto2.y - this.punto1.y);
-  }
+	getAlto() {
+		return Math.abs(this.punto2.y - this.punto1.y);
+	}
 
-  // Método para calcular el área
-  calcularArea() {
-    return this.getAncho() * this.getAlto();
-  }
+	// Método para calcular el área
+	calcularArea() {
+		return this.getAncho() * this.getAlto();
+	}
 
-  // Método para calcular el perímetro
-  calcularPerimetro() {
-    return 2 * (this.getAncho() + this.getAlto());
-  }
+	// Método para calcular el perímetro
+	calcularPerimetro() {
+		return 2 * (this.getAncho() + this.getAlto());
+	}
 
-  toString() {
-    return `Rectángulo con vértices ${this.punto1.toString()} y ${this.punto2.toString()}`;
-  }
+	toString() {
+		return `Rectángulo con vértices ${this.punto1.toString()} y ${this.punto2.toString()}`;
+	}
 }
 
 /* ========================== EJEMPLOS PRÁCTICOS ========================== */
@@ -1797,7 +1910,7 @@ console.log(`Distancia entre A y B: ${distancia}`); // 5
 // 3. Crear un círculo y calcular su área y perímetro
 let circulo = new Circulo(puntoA, 5);
 console.log(circulo.toString());
-console.log("Área del círculo:", circulo.calcularArea().toFixed(2));
+console.log("Área del círculo:", circulo.calcularArea().toFixed(2)); // fixed redondea a n cifras
 console.log("Perímetro del círculo:", circulo.calcularPerimetro().toFixed(2));
 
 // 4. Crear un rectángulo y calcular su área y perímetro
@@ -1812,7 +1925,7 @@ figuras.sort((a, b) => a.calcularArea() - b.calcularArea());
 
 console.log("Figuras ordenadas por área:");
 figuras.forEach(figura => {
-  console.log(`${figura.toString()} - Área: ${figura.calcularArea().toFixed(2)}`);
+	console.log(`${figura.toString()} - Área: ${figura.calcularArea().toFixed(2)}`);
 });
 /*
 /*
@@ -1856,7 +1969,7 @@ Descripción: Selecciona todos los elementos con una etiqueta específica.
 */
 const divs = document.getElementsByTagName("div");
 for (let div of divs) {
-  console.log("Elemento <div>:", div);
+	console.log("Elemento <div>:", div);
 }
 
 /*
@@ -1929,8 +2042,8 @@ console.log("Primer elemento reemplazado.");
 */
 const items = document.querySelectorAll(".item");
 items.forEach((item, index) => {
-  item.textContent = `Ítem ${index + 1}`;
-  item.classList.add("modificado");
+	item.textContent = `Ítem ${index + 1}`;
+	item.classList.add("modificado");
 });
 
 /*
@@ -1938,9 +2051,9 @@ items.forEach((item, index) => {
 */
 const listaDinamica = document.createElement("ul");
 ["Elemento 1", "Elemento 2", "Elemento 3"].forEach((texto) => {
-  const li = document.createElement("li");
-  li.textContent = texto;
-  listaDinamica.appendChild(li);
+	const li = document.createElement("li");
+	li.textContent = texto;
+	listaDinamica.appendChild(li);
 });
 document.body.appendChild(listaDinamica);
 
@@ -1959,8 +2072,8 @@ tarjeta.innerHTML = `
 document.body.appendChild(tarjeta);
 
 tarjeta.querySelector("button").addEventListener("click", () => {
-  tarjeta.remove();
-  console.log("Tarjeta eliminada.");
+	tarjeta.remove();
+	console.log("Tarjeta eliminada.");
 });
 
 /*
@@ -1975,7 +2088,7 @@ parrafoOculto.textContent = "Este párrafo puede ocultarse.";
 document.body.appendChild(parrafoOculto);
 
 botonVisibilidad.addEventListener("click", () => {
-  parrafoOculto.style.display = parrafoOculto.style.display === "none" ? "block" : "none";
+	parrafoOculto.style.display = parrafoOculto.style.display === "none" ? "block" : "none";
 });
 
 /*
@@ -1991,8 +2104,8 @@ botonIncrementar.textContent = "Incrementar";
 document.body.appendChild(botonIncrementar);
 
 botonIncrementar.addEventListener("click", () => {
-  contador++;
-  contadorElemento.textContent = `Contador: ${contador}`;
+	contador++;
+	contadorElemento.textContent = `Contador: ${contador}`;
 });
 
 /*
@@ -2002,10 +2115,10 @@ const galeria = document.createElement("div");
 galeria.className = "galeria";
 
 ["img1.jpg", "img2.jpg", "img3.jpg"].forEach((src) => {
-  const img = document.createElement("img");
-  img.src = src;
-  img.alt = "Imagen dinámica";
-  galeria.appendChild(img);
+	const img = document.createElement("img");
+	img.src = src;
+	img.alt = "Imagen dinámica";
+	galeria.appendChild(img);
 });
 document.body.appendChild(galeria);
 
@@ -2013,8 +2126,8 @@ document.body.appendChild(galeria);
 5. Crear una tabla con datos
 */
 const datos = [
-  { nombre: "Juan", edad: 25 },
-  { nombre: "Ana", edad: 30 },
+	{ nombre: "Juan", edad: 25 },
+	{ nombre: "Ana", edad: 30 },
 ];
 
 const tabla = document.createElement("table");
@@ -2026,12 +2139,12 @@ tabla.innerHTML = `
 `;
 
 datos.forEach((persona) => {
-  const fila = document.createElement("tr");
-  fila.innerHTML = `
+	const fila = document.createElement("tr");
+	fila.innerHTML = `
     <td>${persona.nombre}</td>
     <td>${persona.edad}</td>
   `;
-  tabla.appendChild(fila);
+	tabla.appendChild(fila);
 });
 
 document.body.appendChild(tabla);
@@ -2050,27 +2163,27 @@ Descripción: Exporta múltiples elementos, cada uno con su nombre.
 
 // Archivo: `funciones.js`
 export function saludar(nombre) {
-  return `Hola, ${nombre}!`;
+	return `Hola, ${nombre}!`;
 }
 
 export function despedir(nombre) {
-  return `Adiós, ${nombre}!`;
+	return `Adiós, ${nombre}!`;
 }
 
 export const PI = 3.14159;
 
 export class Persona {
-  constructor(nombre) {
-    this.nombre = nombre;
-  }
-  saludar() {
-    return `Hola, soy ${this.nombre}`;
-  }
+	constructor(nombre) {
+		this.nombre = nombre;
+	}
+	saludar() {
+		return `Hola, soy ${this.nombre}`;
+	}
 }
 
 export const operaciones = {
-  suma: (a, b) => a + b,
-  resta: (a, b) => a - b,
+	suma: (a, b) => a + b,
+	resta: (a, b) => a - b,
 };
 
 /*
@@ -2080,7 +2193,7 @@ Descripción: Exporta un único elemento como predeterminado.
 
 // Archivo: `operaciones.js`
 export default function multiplicar(a, b) {
-  return a * b;
+	return a * b;
 }
 
 /*
@@ -2090,8 +2203,8 @@ Descripción: Exporta múltiples elementos a la vez.
 
 // Archivo: `utilidades.js`
 export const utilidades = {
-  generarID: () => Math.random().toString(36).substr(2, 9),
-  fechaActual: () => new Date().toLocaleDateString(),
+	generarID: () => Math.random().toString(36).substr(2, 9),
+	fechaActual: () => new Date().toLocaleDateString(),
 };
 
 /* ======================== 2. IMPORTACIONES ======================== */
@@ -2141,15 +2254,15 @@ console.log("Fecha actual:", utilidades.utilidades.fechaActual()); // Ejemplo: "
 
 // Archivo: `calculadora.js`
 export function sumar(a, b) {
-  return a + b;
+	return a + b;
 }
 
 export function restar(a, b) {
-  return a - b;
+	return a - b;
 }
 
 export default function multiplicar(a, b) {
-  return a * b;
+	return a * b;
 }
 
 // Archivo: `app.js`
@@ -2165,33 +2278,33 @@ console.log("Multiplicación:", multiplicar(10, 5)); // 50
 
 // Archivo: `personas.js`
 export class Persona {
-  constructor(nombre, edad) {
-    this.nombre = nombre;
-    this.edad = edad;
-  }
-  saludar() {
-    return `Hola, soy ${this.nombre} y tengo ${this.edad} años.`;
-  }
+	constructor(nombre, edad) {
+		this.nombre = nombre;
+		this.edad = edad;
+	}
+	saludar() {
+		return `Hola, soy ${this.nombre} y tengo ${this.edad} años.`;
+	}
 }
 
 export class Profesor extends Persona {
-  constructor(nombre, edad, materia) {
-    super(nombre, edad);
-    this.materia = materia;
-  }
-  saludar() {
-    return `${super.saludar()} Enseño ${this.materia}.`;
-  }
+	constructor(nombre, edad, materia) {
+		super(nombre, edad);
+		this.materia = materia;
+	}
+	saludar() {
+		return `${super.saludar()} Enseño ${this.materia}.`;
+	}
 }
 
 export class Alumno extends Persona {
-  constructor(nombre, edad, curso) {
-    super(nombre, edad);
-    this.curso = curso;
-  }
-  saludar() {
-    return `${super.saludar()} Estoy en el curso ${this.curso}.`;
-  }
+	constructor(nombre, edad, curso) {
+		super(nombre, edad);
+		this.curso = curso;
+	}
+	saludar() {
+		return `${super.saludar()} Estoy en el curso ${this.curso}.`;
+	}
 }
 
 // Archivo: `app.js`
@@ -2211,16 +2324,16 @@ console.log(alumno.saludar()); // "Hola, soy Carlos y tengo 16 años. Estoy en e
 export const imagenes = ["img1.jpg", "img2.jpg", "img3.jpg"];
 
 export function crearGaleria(imagenes) {
-  const galeria = document.createElement("div");
-  galeria.classList.add("galeria");
+	const galeria = document.createElement("div");
+	galeria.classList.add("galeria");
 
-  imagenes.forEach((src) => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = `Imagen ${src}`;
-    galeria.appendChild(img);
-  });
-  return galeria;
+	imagenes.forEach((src) => {
+		const img = document.createElement("img");
+		img.src = src;
+		img.alt = `Imagen ${src}`;
+		galeria.appendChild(img);
+	});
+	return galeria;
 }
 
 // Archivo: `main.js`
@@ -2234,11 +2347,11 @@ document.body.appendChild(crearGaleria(imagenes));
 
 // Archivo: `fechas.js`
 export function obtenerHoraActual() {
-  return new Date().toLocaleTimeString();
+	return new Date().toLocaleTimeString();
 }
 
 export function obtenerFechaActual() {
-  return new Date().toLocaleDateString();
+	return new Date().toLocaleDateString();
 }
 
 // Archivo: `main.js`
@@ -2253,18 +2366,18 @@ console.log("Fecha actual:", obtenerFechaActual());
 
 // Archivo: `tareas.js`
 export class Tarea {
-  constructor(nombre, completada = false) {
-    this.nombre = nombre;
-    this.completada = completada;
-  }
+	constructor(nombre, completada = false) {
+		this.nombre = nombre;
+		this.completada = completada;
+	}
 
-  completar() {
-    this.completada = true;
-  }
+	completar() {
+		this.completada = true;
+	}
 
-  info() {
-    return `${this.nombre} - ${this.completada ? "Completada" : "Pendiente"}`;
-  }
+	info() {
+		return `${this.nombre} - ${this.completada ? "Completada" : "Pendiente"}`;
+	}
 }
 
 // Archivo: `main.js`
@@ -2285,11 +2398,11 @@ Descripción: Generar y mostrar una tabla HTML dinámica a partir de un array de
 /* ======================== DATOS ======================== */
 
 const data = [
-  { nombre: "Juan", edad: 30, profesion: "Ingeniero" },
-  { nombre: "Ana", edad: 25, profesion: "Doctora" },
-  { nombre: "Luis", edad: 28, profesion: "Abogado" },
-  { nombre: "María", edad: 32, profesion: "Diseñadora" },
-  { nombre: "Carlos", edad: 40, profesion: "Profesor" }
+	{ nombre: "Juan", edad: 30, profesion: "Ingeniero" },
+	{ nombre: "Ana", edad: 25, profesion: "Doctora" },
+	{ nombre: "Luis", edad: 28, profesion: "Abogado" },
+	{ nombre: "María", edad: 32, profesion: "Diseñadora" },
+	{ nombre: "Carlos", edad: 40, profesion: "Profesor" }
 ];
 
 /* ======================== FUNCIÓN PARA CREAR TABLA ======================== */
@@ -2302,63 +2415,63 @@ Parámetros:
 */
 
 function crearTabla(array) {
-  // 1. Crear los elementos base de la tabla
-  const tabla = document.createElement("table");
-  const cabecera = document.createElement("thead");
-  const cuerpo = document.createElement("tbody");
+	// 1. Crear los elementos base de la tabla
+	const tabla = document.createElement("table");
+	const cabecera = document.createElement("thead");
+	const cuerpo = document.createElement("tbody");
 
-  // 2. Crear la cabecera (thead)
-  const claves = Object.keys(array[0]); // Extraer claves del primer objeto
-  const filaCabecera = document.createElement("tr");
+	// 2. Crear la cabecera (thead)
+	const claves = Object.keys(array[0]); // Extraer claves del primer objeto
+	const filaCabecera = document.createElement("tr");
 
-  claves.forEach((clave) => {
-    const celdaCabecera = document.createElement("th");
-    celdaCabecera.textContent = clave.toUpperCase();
-    filaCabecera.appendChild(celdaCabecera);
-  });
+	claves.forEach((clave) => {
+		const celdaCabecera = document.createElement("th");
+		celdaCabecera.textContent = clave.toUpperCase();
+		filaCabecera.appendChild(celdaCabecera);
+	});
 
-  cabecera.appendChild(filaCabecera);
-  tabla.appendChild(cabecera);
+	cabecera.appendChild(filaCabecera);
+	tabla.appendChild(cabecera);
 
-  // 3. Crear el cuerpo (tbody)
-  array.forEach((objeto) => {
-    const fila = document.createElement("tr");
+	// 3. Crear el cuerpo (tbody)
+	array.forEach((objeto) => {
+		const fila = document.createElement("tr");
 
-    claves.forEach((clave) => {
-      const celda = document.createElement("td");
-      celda.textContent = objeto[clave];
-      fila.appendChild(celda);
-    });
+		claves.forEach((clave) => {
+			const celda = document.createElement("td");
+			celda.textContent = objeto[clave];
+			fila.appendChild(celda);
+		});
 
-    cuerpo.appendChild(fila);
-  });
+		cuerpo.appendChild(fila);
+	});
 
-  tabla.appendChild(cuerpo);
+	tabla.appendChild(cuerpo);
 
-  // 4. Añadir estilos básicos a la tabla (opcional)
-  tabla.style.width = "100%";
-  tabla.style.borderCollapse = "collapse";
-  tabla.querySelectorAll("th, td").forEach((celda) => {
-    celda.style.border = "1px solid #ddd";
-    celda.style.padding = "8px";
-    celda.style.textAlign = "left";
-  });
-  tabla.querySelectorAll("th").forEach((th) => {
-    th.style.backgroundColor = "#f4f4f4";
-    th.style.fontWeight = "bold";
-  });
+	// 4. Añadir estilos básicos a la tabla (opcional)
+	tabla.style.width = "100%";
+	tabla.style.borderCollapse = "collapse";
+	tabla.querySelectorAll("th, td").forEach((celda) => {
+		celda.style.border = "1px solid #ddd";
+		celda.style.padding = "8px";
+		celda.style.textAlign = "left";
+	});
+	tabla.querySelectorAll("th").forEach((th) => {
+		th.style.backgroundColor = "#f4f4f4";
+		th.style.fontWeight = "bold";
+	});
 
-  // 5. Insertar la tabla en el contenedor del DOM
-  const contenedorTabla = document.querySelector("#contenedor-tabla");
-  contenedorTabla.innerHTML = ""; // Limpiar contenido previo
-  contenedorTabla.appendChild(tabla);
+	// 5. Insertar la tabla en el contenedor del DOM
+	const contenedorTabla = document.querySelector("#contenedor-tabla");
+	contenedorTabla.innerHTML = ""; // Limpiar contenido previo
+	contenedorTabla.appendChild(tabla);
 }
 
 /* ======================== EJECUCIÓN ======================== */
 
 // Crear la tabla y añadirla al contenedor
 document.addEventListener("DOMContentLoaded", () => {
-  crearTabla(data);
+	crearTabla(data);
 });
 
 /*
@@ -2371,13 +2484,13 @@ Descripción: Ejemplos avanzados usando la tabla dinámica creada.
 */
 
 function agregarFila(nombre, edad, profesion) {
-  const nuevaFila = { nombre, edad, profesion };
-  data.push(nuevaFila); // Añadir a los datos existentes
-  crearTabla(data); // Re-crear la tabla actualizada
+	const nuevaFila = { nombre, edad, profesion };
+	data.push(nuevaFila); // Añadir a los datos existentes
+	crearTabla(data); // Re-crear la tabla actualizada
 }
 
 document.querySelector("#agregar-fila").addEventListener("click", () => {
-  agregarFila("Pedro", 22, "Estudiante");
+	agregarFila("Pedro", 22, "Estudiante");
 });
 
 /*
@@ -2385,16 +2498,16 @@ document.querySelector("#agregar-fila").addEventListener("click", () => {
 */
 
 function ordenarTabla(clave) {
-  data.sort((a, b) => (a[clave] > b[clave] ? 1 : -1));
-  crearTabla(data);
+	data.sort((a, b) => (a[clave] > b[clave] ? 1 : -1));
+	crearTabla(data);
 }
 
 document.querySelector("#ordenar-nombre").addEventListener("click", () => {
-  ordenarTabla("nombre");
+	ordenarTabla("nombre");
 });
 
 document.querySelector("#ordenar-edad").addEventListener("click", () => {
-  ordenarTabla("edad");
+	ordenarTabla("edad");
 });
 /*
 ======================== TABLA DINÁMICA EN JAVASCRIPT ========================
@@ -2404,11 +2517,11 @@ Descripción: Generar, modificar y ordenar una tabla dinámica a partir de un ar
 /* ======================== DATOS INICIALES ======================== */
 
 const data = [
-  { nombre: "Juan", edad: 30, profesion: "Ingeniero" },
-  { nombre: "Ana", edad: 25, profesion: "Doctora" },
-  { nombre: "Luis", edad: 28, profesion: "Abogado" },
-  { nombre: "María", edad: 32, profesion: "Diseñadora" },
-  { nombre: "Carlos", edad: 40, profesion: "Profesor" },
+	{ nombre: "Juan", edad: 30, profesion: "Ingeniero" },
+	{ nombre: "Ana", edad: 25, profesion: "Doctora" },
+	{ nombre: "Luis", edad: 28, profesion: "Abogado" },
+	{ nombre: "María", edad: 32, profesion: "Diseñadora" },
+	{ nombre: "Carlos", edad: 40, profesion: "Profesor" },
 ];
 
 /* ======================== FUNCIÓN PARA CREAR TABLA ======================== */
@@ -2420,54 +2533,54 @@ Parámetros:
 - array: Array de objetos con los datos a mostrar.
 */
 function crearTabla(array) {
-  // 1. Crear los elementos base de la tabla
-  const tabla = document.createElement("table");
-  const cabecera = document.createElement("thead");
-  const cuerpo = document.createElement("tbody");
+	// 1. Crear los elementos base de la tabla
+	const tabla = document.createElement("table");
+	const cabecera = document.createElement("thead");
+	const cuerpo = document.createElement("tbody");
 
-  // 2. Crear la cabecera (thead)
-  const claves = Object.keys(array[0]); // Obtener las claves de los objetos
-  const filaCabecera = document.createElement("tr");
+	// 2. Crear la cabecera (thead)
+	const claves = Object.keys(array[0]); // Obtener las claves de los objetos
+	const filaCabecera = document.createElement("tr");
 
-  claves.forEach((clave) => {
-    const celdaCabecera = document.createElement("th");
-    celdaCabecera.textContent = clave.toUpperCase();
-    filaCabecera.appendChild(celdaCabecera);
-  });
+	claves.forEach((clave) => {
+		const celdaCabecera = document.createElement("th");
+		celdaCabecera.textContent = clave.toUpperCase();
+		filaCabecera.appendChild(celdaCabecera);
+	});
 
-  cabecera.appendChild(filaCabecera);
-  tabla.appendChild(cabecera);
+	cabecera.appendChild(filaCabecera);
+	tabla.appendChild(cabecera);
 
-  // 3. Crear las filas del cuerpo (tbody)
-  array.forEach((objeto) => {
-    const fila = document.createElement("tr");
-    claves.forEach((clave) => {
-      const celda = document.createElement("td");
-      celda.textContent = objeto[clave];
-      fila.appendChild(celda);
-    });
-    cuerpo.appendChild(fila);
-  });
+	// 3. Crear las filas del cuerpo (tbody)
+	array.forEach((objeto) => {
+		const fila = document.createElement("tr");
+		claves.forEach((clave) => {
+			const celda = document.createElement("td");
+			celda.textContent = objeto[clave];
+			fila.appendChild(celda);
+		});
+		cuerpo.appendChild(fila);
+	});
 
-  tabla.appendChild(cuerpo);
+	tabla.appendChild(cuerpo);
 
-  // 4. Aplicar estilos básicos a la tabla
-  tabla.style.width = "100%";
-  tabla.style.borderCollapse = "collapse";
-  tabla.querySelectorAll("th, td").forEach((celda) => {
-    celda.style.border = "1px solid #ccc";
-    celda.style.padding = "8px";
-    celda.style.textAlign = "center";
-  });
-  tabla.querySelectorAll("th").forEach((th) => {
-    th.style.backgroundColor = "#f4f4f4";
-    th.style.fontWeight = "bold";
-  });
+	// 4. Aplicar estilos básicos a la tabla
+	tabla.style.width = "100%";
+	tabla.style.borderCollapse = "collapse";
+	tabla.querySelectorAll("th, td").forEach((celda) => {
+		celda.style.border = "1px solid #ccc";
+		celda.style.padding = "8px";
+		celda.style.textAlign = "center";
+	});
+	tabla.querySelectorAll("th").forEach((th) => {
+		th.style.backgroundColor = "#f4f4f4";
+		th.style.fontWeight = "bold";
+	});
 
-  // 5. Insertar la tabla en el contenedor
-  const contenedorTabla = document.querySelector("#contenedor-tabla");
-  contenedorTabla.innerHTML = ""; // Limpiar contenido previo
-  contenedorTabla.appendChild(tabla);
+	// 5. Insertar la tabla en el contenedor
+	const contenedorTabla = document.querySelector("#contenedor-tabla");
+	contenedorTabla.innerHTML = ""; // Limpiar contenido previo
+	contenedorTabla.appendChild(tabla);
 }
 
 /* ======================== FUNCIÓN PARA AGREGAR FILAS ======================== */
@@ -2481,9 +2594,9 @@ Parámetros:
 - profesion: Profesión de la persona.
 */
 function agregarFila(nombre, edad, profesion) {
-  const nuevaFila = { nombre, edad, profesion };
-  data.push(nuevaFila); // Añadir a los datos existentes
-  crearTabla(data); // Re-crear la tabla actualizada
+	const nuevaFila = { nombre, edad, profesion };
+	data.push(nuevaFila); // Añadir a los datos existentes
+	crearTabla(data); // Re-crear la tabla actualizada
 }
 
 /* ======================== FUNCIÓN PARA ORDENAR LA TABLA ======================== */
@@ -2495,36 +2608,36 @@ Parámetros:
 - clave: La clave del objeto por la cual ordenar (ej. "nombre" o "edad").
 */
 function ordenarTabla(clave) {
-  data.sort((a, b) => (a[clave] > b[clave] ? 1 : -1));
-  crearTabla(data);
+	data.sort((a, b) => (a[clave] > b[clave] ? 1 : -1));
+	crearTabla(data);
 }
 
 /* ======================== EVENTOS ======================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  crearTabla(data); // Crear la tabla inicial al cargar la página
+	crearTabla(data); // Crear la tabla inicial al cargar la página
 
-  // Evento para agregar una nueva fila
-  document.querySelector("#agregar-fila").addEventListener("click", () => {
-    const nombre = prompt("Ingrese el nombre:");
-    const edad = parseInt(prompt("Ingrese la edad:"), 10);
-    const profesion = prompt("Ingrese la profesión:");
-    if (nombre && !isNaN(edad) && profesion) {
-      agregarFila(nombre, edad, profesion);
-    } else {
-      alert("Datos inválidos. Intente nuevamente.");
-    }
-  });
+	// Evento para agregar una nueva fila
+	document.querySelector("#agregar-fila").addEventListener("click", () => {
+		const nombre = prompt("Ingrese el nombre:");
+		const edad = parseInt(prompt("Ingrese la edad:"), 10);
+		const profesion = prompt("Ingrese la profesión:");
+		if (nombre && !isNaN(edad) && profesion) {
+			agregarFila(nombre, edad, profesion);
+		} else {
+			alert("Datos inválidos. Intente nuevamente.");
+		}
+	});
 
-  // Evento para ordenar por nombre
-  document.querySelector("#ordenar-nombre").addEventListener("click", () => {
-    ordenarTabla("nombre");
-  });
+	// Evento para ordenar por nombre
+	document.querySelector("#ordenar-nombre").addEventListener("click", () => {
+		ordenarTabla("nombre");
+	});
 
-  // Evento para ordenar por edad
-  document.querySelector("#ordenar-edad").addEventListener("click", () => {
-    ordenarTabla("edad");
-  });
+	// Evento para ordenar por edad
+	document.querySelector("#ordenar-edad").addEventListener("click", () => {
+		ordenarTabla("edad");
+	});
 });
 /*
 ======================== FUNCIONES FLECHA EN JAVASCRIPT ========================
@@ -2541,7 +2654,7 @@ Sintaxis: const nombreFuncion = (parametros) => { cuerpo de la función }
 
 // Ejemplo: Sumar dos números
 const sumar = (a, b) => {
-  return a + b;
+	return a + b;
 };
 console.log("Suma de 2 + 3:", sumar(2, 3)); // Salida: 5
 
@@ -2601,13 +2714,13 @@ Heredan el valor de `this` del ámbito donde fueron creadas.
 
 // Ejemplo comparativo:
 const objeto = {
-  nombre: "Ana",
-  saludarNormal: function () {
-    console.log(`Hola, soy ${this.nombre}`); // `this` apunta al objeto
-  },
-  saludarFlecha: () => {
-    console.log(`Hola, soy ${this.nombre}`); // `this` no apunta al objeto, sino al ámbito global
-  },
+	nombre: "Ana",
+	saludarNormal: function () {
+		console.log(`Hola, soy ${this.nombre}`); // `this` apunta al objeto
+	},
+	saludarFlecha: () => {
+		console.log(`Hola, soy ${this.nombre}`); // `this` no apunta al objeto, sino al ámbito global
+	},
 };
 
 objeto.saludarNormal(); // Salida: Hola, soy Ana
@@ -2626,7 +2739,7 @@ pero la función flecha toma el `this` del ámbito donde fue definida (global o 
 
 const nombres = ["Juan", "Ana", "Pedro"];
 const personas = nombres.map(nombre => ({ nombre }));
-console.log("Lista de personas:", personas); 
+console.log("Lista de personas:", personas);
 // Salida: [{ nombre: "Juan" }, { nombre: "Ana" }, { nombre: "Pedro" }]
 
 /*
@@ -2634,9 +2747,9 @@ console.log("Lista de personas:", personas);
 */
 
 const empleados = [
-  { nombre: "Carlos", edad: 35, salario: 2500 },
-  { nombre: "María", edad: 28, salario: 1800 },
-  { nombre: "Luis", edad: 45, salario: 3000 },
+	{ nombre: "Carlos", edad: 35, salario: 2500 },
+	{ nombre: "María", edad: 28, salario: 1800 },
+	{ nombre: "Luis", edad: 45, salario: 3000 },
 ];
 
 const empleadosAltos = empleados.filter(emp => emp.salario > 2000);
@@ -2656,8 +2769,8 @@ console.log("Primer empleado mayor de 30 años:", primerEmpleadoMayor30);
 
 const letras = ["a", "b", "c", "a", "b", "a"];
 const contador = letras.reduce((acc, letra) => {
-  acc[letra] = (acc[letra] || 0) + 1;
-  return acc;
+	acc[letra] = (acc[letra] || 0) + 1;
+	return acc;
 }, {});
 
 console.log("Contador de letras:", contador); // Salida: { a: 3, b: 2, c: 1 }
@@ -2667,9 +2780,9 @@ console.log("Contador de letras:", contador); // Salida: { a: 3, b: 2, c: 1 }
 */
 
 const productos = [
-  { nombre: "Manzana", precio: 2 },
-  { nombre: "Naranja", precio: 1 },
-  { nombre: "Plátano", precio: 3 },
+	{ nombre: "Manzana", precio: 2 },
+	{ nombre: "Naranja", precio: 1 },
+	{ nombre: "Plátano", precio: 3 },
 ];
 
 const productosOrdenados = productos.sort((a, b) => a.precio - b.precio);
@@ -2689,7 +2802,7 @@ Sintaxis: setTimeout(función, tiempo);
 
 // Ejemplo 1: Mostrar un mensaje después de 2 segundos
 const saludar = () => {
-  console.log("Hola, este mensaje aparece después de 2 segundos.");
+	console.log("Hola, este mensaje aparece después de 2 segundos.");
 };
 setTimeout(saludar, 2000); // Ejecuta la función después de 2000 ms (2 segundos)
 
@@ -2697,7 +2810,7 @@ setTimeout(saludar, 2000); // Ejecuta la función después de 2000 ms (2 segundo
 Ejemplo 2: Ejecutar una función anónima directamente en setTimeout
 */
 setTimeout(() => {
-  console.log("Este mensaje también aparece después de 3 segundos.");
+	console.log("Este mensaje también aparece después de 3 segundos.");
 }, 3000);
 
 /* ======================== 2. setInterval() ======================== */
@@ -2709,8 +2822,8 @@ Sintaxis: setInterval(función, tiempo);
 
 // Ejemplo 1: Mostrar la hora actual cada 3 segundos
 const mostrarHora = () => {
-  const ahora = new Date();
-  console.log(`La hora actual es: ${ahora.toLocaleTimeString()}`);
+	const ahora = new Date();
+	console.log(`La hora actual es: ${ahora.toLocaleTimeString()}`);
 };
 setInterval(mostrarHora, 3000); // Repite la función cada 3000 ms (3 segundos)
 
@@ -2719,8 +2832,8 @@ Ejemplo 2: Crear un contador ascendente
 */
 let contador = 0;
 const incrementarContador = () => {
-  contador++;
-  console.log(`Contador: ${contador}`);
+	contador++;
+	console.log(`Contador: ${contador}`);
 };
 setInterval(incrementarContador, 1000); // Incrementa y muestra el contador cada segundo
 
@@ -2733,16 +2846,16 @@ Descripción: Puedes detener la ejecución de setTimeout o setInterval usando `c
 // Ejemplo: Detener un intervalo después de un tiempo
 let contadorDetenido = 0;
 const incrementarYDetener = () => {
-  contadorDetenido++;
-  console.log(`Contador Detenido: ${contadorDetenido}`);
+	contadorDetenido++;
+	console.log(`Contador Detenido: ${contadorDetenido}`);
 };
 
 const intervalo = setInterval(incrementarYDetener, 1000); // Incrementa cada segundo
 
 // Detener el intervalo después de 5 segundos
 setTimeout(() => {
-  clearInterval(intervalo);
-  console.log("El intervalo ha sido detenido después de 5 segundos.");
+	clearInterval(intervalo);
+	console.log("El intervalo ha sido detenido después de 5 segundos.");
 }, 5000);
 
 /* ======================== 4. Ejemplo Combinado: setTimeout + setInterval ======================== */
@@ -2753,12 +2866,12 @@ Descripción: Usar setTimeout para iniciar un intervalo después de un retraso i
 
 // Ejemplo: Mostrar un mensaje después de 5 segundos y luego cada 5 segundos
 const mostrarMensaje = () => {
-  console.log("Este mensaje se muestra después de 5 segundos y luego cada 5 segundos.");
+	console.log("Este mensaje se muestra después de 5 segundos y luego cada 5 segundos.");
 };
 
 setTimeout(() => {
-  mostrarMensaje(); // Mostrar el primer mensaje
-  setInterval(mostrarMensaje, 5000); // Repetir cada 5 segundos
+	mostrarMensaje(); // Mostrar el primer mensaje
+	setInterval(mostrarMensaje, 5000); // Repetir cada 5 segundos
 }, 5000);
 
 /* ======================== 5. EJEMPLOS PRÁCTICOS ======================== */
@@ -2767,17 +2880,17 @@ setTimeout(() => {
 1. Crear un temporizador regresivo
 */
 const temporizadorRegresivo = (segundos) => {
-  let tiempoRestante = segundos;
+	let tiempoRestante = segundos;
 
-  const intervalo = setInterval(() => {
-    console.log(`Tiempo restante: ${tiempoRestante} segundos`);
-    tiempoRestante--;
+	const intervalo = setInterval(() => {
+		console.log(`Tiempo restante: ${tiempoRestante} segundos`);
+		tiempoRestante--;
 
-    if (tiempoRestante < 0) {
-      clearInterval(intervalo);
-      console.log("¡Tiempo finalizado!");
-    }
-  }, 1000);
+		if (tiempoRestante < 0) {
+			clearInterval(intervalo);
+			console.log("¡Tiempo finalizado!");
+		}
+	}, 1000);
 };
 
 // Iniciar un temporizador de 10 segundos
@@ -2790,21 +2903,21 @@ const puntos = ["-", "\\", "|", "/"];
 let indice = 0;
 
 const animacion = setInterval(() => {
-  process.stdout.write(`\rCargando ${puntos[indice]}`); // Actualiza la línea en consola
-  indice = (indice + 1) % puntos.length;
+	process.stdout.write(`\rCargando ${puntos[indice]}`); // Actualiza la línea en consola
+	indice = (indice + 1) % puntos.length;
 }, 200);
 
 // Detener la animación después de 5 segundos
 setTimeout(() => {
-  clearInterval(animacion);
-  console.log("\nCarga completada.");
+	clearInterval(animacion);
+	console.log("\nCarga completada.");
 }, 5000);
 
 /*
 3. Generar una notificación periódica
 */
 const notificarUsuario = () => {
-  console.log("🔔 ¡Recuerda tomar un descanso!");
+	console.log("🔔 ¡Recuerda tomar un descanso!");
 };
 setInterval(notificarUsuario, 6000); // Recordatorio cada 6 segundos
 
@@ -2812,28 +2925,28 @@ setInterval(notificarUsuario, 6000); // Recordatorio cada 6 segundos
 4. Simular una cuenta atrás antes de ejecutar una acción
 */
 const cuentaAtras = (tiempo, accion) => {
-  let contador = tiempo;
+	let contador = tiempo;
 
-  const intervalo = setInterval(() => {
-    console.log(`Cuenta atrás: ${contador} segundos`);
-    contador--;
+	const intervalo = setInterval(() => {
+		console.log(`Cuenta atrás: ${contador} segundos`);
+		contador--;
 
-    if (contador < 0) {
-      clearInterval(intervalo);
-      accion();
-    }
-  }, 1000);
+		if (contador < 0) {
+			clearInterval(intervalo);
+			accion();
+		}
+	}, 1000);
 };
 
 cuentaAtras(5, () => {
-  console.log("🚀 ¡Acción ejecutada después de la cuenta atrás!");
+	console.log("🚀 ¡Acción ejecutada después de la cuenta atrás!");
 });
 
 /*
 5. Crear una alerta emergente cada cierto tiempo
 */
 setInterval(() => {
-  alert("¡Recuerda guardar tu progreso!");
+	alert("¡Recuerda guardar tu progreso!");
 }, 10000); // Aparece cada 10 segundos (sólo funciona en navegadores)
 
 /* ======================== RESUMEN ========================
@@ -2855,7 +2968,7 @@ Sintaxis: for (inicio; condición; incremento) { código a ejecutar }
 */
 
 for (let i = 1; i <= 5; i++) {
-  console.log(`Iteración ${i}`); // Salida: 1, 2, 3, 4, 5
+	console.log(`Iteración ${i}`); // Salida: 1, 2, 3, 4, 5
 }
 
 /*
@@ -2865,7 +2978,7 @@ Ejemplo Práctico: Sumar todos los números de un array.
 const numeros = [1, 2, 3, 4, 5];
 let suma = 0;
 for (let i = 0; i < numeros.length; i++) {
-  suma += numeros[i];
+	suma += numeros[i];
 }
 console.log("Suma total:", suma); // Salida: 15
 
@@ -2878,8 +2991,8 @@ Sintaxis: while (condición) { código a ejecutar }
 
 let contador = 1;
 while (contador <= 5) {
-  console.log(`Número: ${contador}`);
-  contador++;
+	console.log(`Número: ${contador}`);
+	contador++;
 }
 
 /*
@@ -2889,8 +3002,8 @@ Ejemplo Práctico: Buscar un número en un array.
 let encontrado = false;
 let i = 0;
 while (i < numeros.length && !encontrado) {
-  if (numeros[i] === 3) encontrado = true;
-  i++;
+	if (numeros[i] === 3) encontrado = true;
+	i++;
 }
 console.log("Número encontrado:", encontrado); // Salida: true
 
@@ -2903,8 +3016,8 @@ Sintaxis: do { código } while (condición);
 
 let valor = 1;
 do {
-  console.log(`Valor: ${valor}`);
-  valor++;
+	console.log(`Valor: ${valor}`);
+	valor++;
 } while (valor <= 5);
 
 /* ======================== 4. BUCLE FOR...IN ======================== */
@@ -2916,7 +3029,7 @@ Sintaxis: for (let clave in objeto) { código a ejecutar }
 
 const persona = { nombre: "Juan", edad: 30, profesion: "Ingeniero" };
 for (let clave in persona) {
-  console.log(`${clave}: ${persona[clave]}`);
+	console.log(`${clave}: ${persona[clave]}`);
 } // Salida: nombre: Juan, edad: 30, profesion: Ingeniero
 
 /* ======================== 5. BUCLE FOR...OF ======================== */
@@ -2927,7 +3040,7 @@ Sintaxis: for (let variable of iterable) { código a ejecutar }
 */
 
 for (let numero of numeros) {
-  console.log("Número:", numero);
+	console.log("Número:", numero);
 } // Salida: 1, 2, 3, 4, 5
 
 /* ======================== 6. forEach() ======================== */
@@ -2966,15 +3079,15 @@ Métodos Importantes:
 /* ======================== EJEMPLO BÁSICO ======================== */
 
 const miPromesa = new Promise((resolve, reject) => {
-  let exito = true; // Simulación de éxito o error
-  if (exito) resolve("✅ Operación exitosa!");
-  else reject("❌ Error en la operación.");
+	let exito = true; // Simulación de éxito o error
+	if (exito) resolve("✅ Operación exitosa!");
+	else reject("❌ Error en la operación.");
 });
 
 miPromesa
-  .then((mensaje) => console.log("Resultado:", mensaje)) // Éxito
-  .catch((error) => console.error("Error:", error))     // Error
-  .finally(() => console.log("Promesa completada."));   // Siempre se ejecuta
+	.then((mensaje) => console.log("Resultado:", mensaje)) // Éxito
+	.catch((error) => console.error("Error:", error))     // Error
+	.finally(() => console.log("Promesa completada."));   // Siempre se ejecuta
 
 /* ======================== EJEMPLOS PRÁCTICOS ======================== */
 
@@ -2983,29 +3096,29 @@ miPromesa
 */
 
 const obtenerDatos = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const datos = { nombre: "Juan", edad: 30 };
-      resolve(datos); // Simulación de éxito
-    }, 2000);
-  });
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const datos = { nombre: "Juan", edad: 30 };
+			resolve(datos); // Simulación de éxito
+		}, 2000);
+	});
 };
 
 obtenerDatos()
-  .then((datos) => console.log("Datos recibidos:", datos))
-  .catch((error) => console.error("Error al obtener datos:", error));
+	.then((datos) => console.log("Datos recibidos:", datos))
+	.catch((error) => console.error("Error al obtener datos:", error));
 
 /*
 2. Manejo de Error en Promesas
 */
 
 const promesaConError = new Promise((resolve, reject) => {
-  setTimeout(() => reject("¡Algo salió mal!"), 1000);
+	setTimeout(() => reject("¡Algo salió mal!"), 1000);
 });
 
 promesaConError
-  .then((resultado) => console.log(resultado))
-  .catch((error) => console.error("Error capturado:", error));
+	.then((resultado) => console.log(resultado))
+	.catch((error) => console.error("Error capturado:", error));
 
 /*
 3. Encadenamiento de Promesas
@@ -3015,25 +3128,25 @@ const paso1 = () => new Promise((resolve) => resolve("Paso 1 completado"));
 const paso2 = () => new Promise((resolve) => resolve("Paso 2 completado"));
 
 paso1()
-  .then((mensaje1) => {
-    console.log(mensaje1);
-    return paso2();
-  })
-  .then((mensaje2) => console.log(mensaje2))
-  .catch((error) => console.error("Error en algún paso:", error));
+	.then((mensaje1) => {
+		console.log(mensaje1);
+		return paso2();
+	})
+	.then((mensaje2) => console.log(mensaje2))
+	.catch((error) => console.error("Error en algún paso:", error));
 
 /*
 4. Usar finally() para Limpieza
 */
 
 const miPromesaConFinally = new Promise((resolve) => {
-  setTimeout(() => resolve("Tarea finalizada"), 1500);
+	setTimeout(() => resolve("Tarea finalizada"), 1500);
 });
 
 miPromesaConFinally
-  .then((mensaje) => console.log(mensaje))
-  .catch((error) => console.error(error))
-  .finally(() => console.log("Limpieza de recursos completada."));
+	.then((mensaje) => console.log(mensaje))
+	.catch((error) => console.error(error))
+	.finally(() => console.log("Limpieza de recursos completada."));
 
 /*
 5. Ejecutar Múltiples Promesas Simultáneamente (Promise.all)
@@ -3044,8 +3157,8 @@ const promesa2 = new Promise((resolve) => setTimeout(() => resolve("Promesa 2 co
 const promesa3 = new Promise((resolve) => setTimeout(() => resolve("Promesa 3 completada"), 1000));
 
 Promise.all([promesa1, promesa2, promesa3])
-  .then((resultados) => console.log("Todas las promesas completadas:", resultados))
-  .catch((error) => console.error("Error en alguna promesa:", error));
+	.then((resultados) => console.log("Todas las promesas completadas:", resultados))
+	.catch((error) => console.error("Error en alguna promesa:", error));
 
 /* ======================== RESUMEN ========================
 
@@ -3074,9 +3187,9 @@ Descripción: Permite realizar solicitudes HTTP de manera asíncrona.
 */
 
 fetch("https://jsonplaceholder.typicode.com/posts/1")
-  .then((response) => response.json())
-  .then((data) => console.log("Datos obtenidos:", data))
-  .catch((error) => console.error("Error:", error));
+	.then((response) => response.json())
+	.then((data) => console.log("Datos obtenidos:", data))
+	.catch((error) => console.error("Error:", error));
 
 /* ======================== 9. ASYNC / AWAIT ======================== */
 
@@ -3085,24 +3198,24 @@ Descripción: Simplifica el manejo de promesas usando una sintaxis más limpia.
 */
 
 async function obtenerDatos() {
-  try {
-    const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-    const datos = await respuesta.json();
-    console.log("Datos con async/await:", datos);
-  } catch (error) {
-    console.error("Error:", error);
-  }
+	try {
+		const respuesta = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+		const datos = await respuesta.json();
+		console.log("Datos con async/await:", datos);
+	} catch (error) {
+		console.error("Error:", error);
+	}
 }
 obtenerDatos();
 
 /* ======================== 10. MANEJO DE EVENTOS ======================== */
 
 window.onload = () => {
-  const boton = document.createElement("button");
-  boton.textContent = "Haz clic aquí";
-  document.body.appendChild(boton);
+	const boton = document.createElement("button");
+	boton.textContent = "Haz clic aquí";
+	document.body.appendChild(boton);
 
-  boton.addEventListener("click", () => alert("¡Botón clicado!"));
+	boton.addEventListener("click", () => alert("¡Botón clicado!"));
 };
 
 /* ======================== 11. LOCALSTORAGE ======================== */
@@ -3158,8 +3271,8 @@ localStorage.setItem("país", "España");
 // Recorrer todas las claves almacenadas
 console.log("Recorriendo localStorage:");
 for (let i = 0; i < localStorage.length; i++) {
-  const clave = localStorage.key(i);
-  console.log(`Clave: ${clave}, Valor: ${localStorage.getItem(clave)}`);
+	const clave = localStorage.key(i);
+	console.log(`Clave: ${clave}, Valor: ${localStorage.getItem(clave)}`);
 }
 
 /* ======================== 6. Almacenar Objetos ======================== */
@@ -3189,9 +3302,9 @@ Ejemplo práctico: Crear un contador que persista en el localStorage.
 let contador = localStorage.getItem("contador") ? parseInt(localStorage.getItem("contador")) : 0;
 
 const incrementarContador = () => {
-  contador++;
-  localStorage.setItem("contador", contador);
-  console.log(`Contador: ${contador}`);
+	contador++;
+	localStorage.setItem("contador", contador);
+	console.log(`Contador: ${contador}`);
 };
 
 // Incrementar el contador 3 veces
@@ -3214,9 +3327,9 @@ tareasRecuperadas.forEach((tarea, index) => console.log(`${index + 1}. ${tarea}`
 /* ======================== 9. Validar si una clave existe ======================== */
 
 if (localStorage.getItem("usuario")) {
-  console.log("La clave 'usuario' existe en localStorage.");
+	console.log("La clave 'usuario' existe en localStorage.");
 } else {
-  console.log("La clave 'usuario' no existe en localStorage.");
+	console.log("La clave 'usuario' no existe en localStorage.");
 }
 
 /* ======================== 10. Notificación de Espacio Usado ======================== */
@@ -3232,19 +3345,19 @@ console.log(`Espacio usado en localStorage: ${espacioUsado} bytes`);
 const numeroTabla = 5;
 console.log(`Tabla del ${numeroTabla}`);
 for (let i = 1; i <= 10; i++) {
-  console.log(`${numeroTabla} x ${i} = ${numeroTabla * i}`);
+	console.log(`${numeroTabla} x ${i} = ${numeroTabla * i}`);
 }
 
 // 2. Temporizador regresivo usando setInterval
 let tiempoRestante = 10;
 const temporizador = setInterval(() => {
-  console.log(`Tiempo restante: ${tiempoRestante} segundos`);
-  tiempoRestante--;
+	console.log(`Tiempo restante: ${tiempoRestante} segundos`);
+	tiempoRestante--;
 
-  if (tiempoRestante < 0) {
-    clearInterval(temporizador);
-    console.log("¡Tiempo terminado!");
-  }
+	if (tiempoRestante < 0) {
+		clearInterval(temporizador);
+		console.log("¡Tiempo terminado!");
+	}
 }, 1000);
 
 /* ======================== RESUMEN ========================
@@ -3269,16 +3382,16 @@ Se puede usar para iterar sobre las claves y acceder a sus valores.
 */
 
 const arrayDeObjetos = [
-  { nombre: "Juan", edad: 30, ciudad: "Madrid" },
-  { nombre: "Ana", edad: 25, ciudad: "Barcelona" },
-  { nombre: "Carlos", edad: 35, ciudad: "Valencia" }
+	{ nombre: "Juan", edad: 30, ciudad: "Madrid" },
+	{ nombre: "Ana", edad: 25, ciudad: "Barcelona" },
+	{ nombre: "Carlos", edad: 35, ciudad: "Valencia" }
 ];
 
 console.log("=== Iteración usando Object.keys() ===");
 for (const obj of arrayDeObjetos) {
-  for (const key of Object.keys(obj)) {
-    console.log(`Clave: ${key}, Valor: ${obj[key]}`);
-  }
+	for (const key of Object.keys(obj)) {
+		console.log(`Clave: ${key}, Valor: ${obj[key]}`);
+	}
 }
 
 /*
@@ -3297,9 +3410,9 @@ Descripción: `Object.entries()` devuelve un array de arrays donde cada sub-arra
 
 console.log("=== Iteración usando Object.entries() ===");
 for (const obj of arrayDeObjetos) {
-  for (const [key, value] of Object.entries(obj)) {
-    console.log(`Clave: ${key}, Valor: ${value}`);
-  }
+	for (const [key, value] of Object.entries(obj)) {
+		console.log(`Clave: ${key}, Valor: ${value}`);
+	}
 }
 
 /*
@@ -3318,9 +3431,9 @@ Descripción: `Object.values()` devuelve un array con los valores de un objeto, 
 
 console.log("=== Iteración usando Object.values() ===");
 for (const obj of arrayDeObjetos) {
-  for (const value of Object.values(obj)) {
-    console.log(`Valor: ${value}`);
-  }
+	for (const value of Object.values(obj)) {
+		console.log(`Valor: ${value}`);
+	}
 }
 
 /*
@@ -3424,7 +3537,7 @@ Ejemplo: Aumentar la edad de todas las personas en 1 año.
 
 console.log("=== Aumentar la edad en 1 año ===");
 const actualizados = arrayDeObjetos.map((persona) => {
-  return { ...persona, edad: persona.edad + 1 };
+	return { ...persona, edad: persona.edad + 1 };
 });
 console.log(actualizados);
 
@@ -3485,39 +3598,39 @@ Descripción: Eventos que ocurren cuando el usuario interactúa con el ratón.
 /* 1.1 click - Se dispara cuando se hace clic en un elemento */
 const btnClick = document.querySelector("#btnClick");
 btnClick.addEventListener("click", () => {
-  console.log("Se hizo clic en el botón.");
+	console.log("Se hizo clic en el botón.");
 });
 
 /* 1.2 dblclick - Se dispara cuando se hace doble clic */
 const btnDblClick = document.querySelector("#btnDblClick");
 btnDblClick.addEventListener("dblclick", () => {
-  console.log("Se hizo doble clic en el botón.");
+	console.log("Se hizo doble clic en el botón.");
 });
 
 /* 1.3 mouseover y mouseout - Cuando el ratón entra o sale de un elemento */
 const cajaHover = document.querySelector("#cajaHover");
 cajaHover.addEventListener("mouseover", () => {
-  cajaHover.style.backgroundColor = "yellow";
-  console.log("Ratón sobre la caja.");
+	cajaHover.style.backgroundColor = "yellow";
+	console.log("Ratón sobre la caja.");
 });
 cajaHover.addEventListener("mouseout", () => {
-  cajaHover.style.backgroundColor = "";
-  console.log("Ratón fuera de la caja.");
+	cajaHover.style.backgroundColor = "";
+	console.log("Ratón fuera de la caja.");
 });
 
 /* 1.4 mousedown y mouseup - Cuando se presiona o suelta un botón del ratón */
 const cajaMouseDown = document.querySelector("#cajaMouseDown");
 cajaMouseDown.addEventListener("mousedown", () => {
-  console.log("Botón del ratón presionado.");
+	console.log("Botón del ratón presionado.");
 });
 cajaMouseDown.addEventListener("mouseup", () => {
-  console.log("Botón del ratón liberado.");
+	console.log("Botón del ratón liberado.");
 });
 
 /* 1.5 mousemove - Se dispara mientras el ratón se mueve sobre un elemento */
 const cajaMouseMove = document.querySelector("#cajaMouseMove");
 cajaMouseMove.addEventListener("mousemove", () => {
-  console.log("El ratón se está moviendo sobre la caja.");
+	console.log("El ratón se está moviendo sobre la caja.");
 });
 
 /* ======================== 2. EVENTOS DE TECLADO ======================== */
@@ -3528,18 +3641,18 @@ Descripción: Eventos relacionados con la interacción del teclado.
 
 /* 2.1 keydown - Se dispara cuando una tecla es presionada */
 document.addEventListener("keydown", (event) => {
-  console.log(`Tecla presionada: ${event.key}`);
+	console.log(`Tecla presionada: ${event.key}`);
 });
 
 /* 2.2 keyup - Se dispara cuando una tecla es liberada */
 document.addEventListener("keyup", (event) => {
-  console.log(`Tecla liberada: ${event.key}`);
+	console.log(`Tecla liberada: ${event.key}`);
 });
 
 /* 2.3 input - Captura cada cambio en un campo de texto */
 const inputTexto = document.querySelector("#inputTexto");
 inputTexto.addEventListener("input", () => {
-  console.log(`Valor del campo: ${inputTexto.value}`);
+	console.log(`Valor del campo: ${inputTexto.value}`);
 });
 
 /* ======================== 3. EVENTOS DE FORMULARIO ======================== */
@@ -3551,14 +3664,14 @@ Descripción: Eventos asociados a formularios y elementos de formulario.
 /* 3.1 submit - Se dispara cuando se envía un formulario */
 const formulario = document.querySelector("#formulario");
 formulario.addEventListener("submit", (event) => {
-  event.preventDefault(); // Evita el envío del formulario
-  console.log("Formulario enviado.");
+	event.preventDefault(); // Evita el envío del formulario
+	console.log("Formulario enviado.");
 });
 
 /* 3.2 change - Se dispara cuando un input pierde el foco después de modificar su valor */
 const inputCambio = document.querySelector("#inputCambio");
 inputCambio.addEventListener("change", () => {
-  console.log(`Nuevo valor del input: ${inputCambio.value}`);
+	console.log(`Nuevo valor del input: ${inputCambio.value}`);
 });
 
 /* ======================== 4. EVENTOS DE VENTANA ======================== */
@@ -3569,17 +3682,17 @@ Descripción: Eventos relacionados con la ventana del navegador.
 
 /* 4.1 load - Se dispara cuando la página y sus recursos han terminado de cargarse */
 window.addEventListener("load", () => {
-  console.log("Página completamente cargada.");
+	console.log("Página completamente cargada.");
 });
 
 /* 4.2 resize - Se dispara cuando la ventana cambia de tamaño */
 window.addEventListener("resize", () => {
-  console.log(`Tamaño de la ventana: ${window.innerWidth}x${window.innerHeight}`);
+	console.log(`Tamaño de la ventana: ${window.innerWidth}x${window.innerHeight}`);
 });
 
 /* 4.3 scroll - Se dispara cuando el usuario desplaza la página */
 window.addEventListener("scroll", () => {
-  console.log(`Desplazamiento vertical: ${window.scrollY}`);
+	console.log(`Desplazamiento vertical: ${window.scrollY}`);
 });
 
 /* ======================== 5. EVENTOS DE DRAG & DROP ======================== */
@@ -3592,21 +3705,21 @@ const dragItem = document.querySelector("#dragItem");
 const dropZone = document.querySelector("#dropZone");
 
 dragItem.addEventListener("dragstart", (event) => {
-  console.log("Elemento arrastrado.");
-  event.dataTransfer.setData("text/plain", dragItem.id);
+	console.log("Elemento arrastrado.");
+	event.dataTransfer.setData("text/plain", dragItem.id);
 });
 
 dropZone.addEventListener("dragover", (event) => {
-  event.preventDefault(); // Necesario para permitir el drop
-  console.log("Elemento sobre la zona de drop.");
+	event.preventDefault(); // Necesario para permitir el drop
+	console.log("Elemento sobre la zona de drop.");
 });
 
 dropZone.addEventListener("drop", (event) => {
-  event.preventDefault();
-  const id = event.dataTransfer.getData("text/plain");
-  const elemento = document.getElementById(id);
-  dropZone.appendChild(elemento);
-  console.log("Elemento soltado en la zona de drop.");
+	event.preventDefault();
+	const id = event.dataTransfer.getData("text/plain");
+	const elemento = document.getElementById(id);
+	dropZone.appendChild(elemento);
+	console.log("Elemento soltado en la zona de drop.");
 });
 
 /* ======================== 6. EVENTOS DE CONTEXTO ======================== */
@@ -3618,8 +3731,8 @@ Descripción: Eventos relacionados con el clic derecho.
 /* 6.1 contextmenu - Se dispara al hacer clic derecho en un elemento */
 const cajaContextMenu = document.querySelector("#cajaContextMenu");
 cajaContextMenu.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
-  console.log("Menú contextual deshabilitado.");
+	event.preventDefault();
+	console.log("Menú contextual deshabilitado.");
 });
 
 /* ======================== 7. EVENTOS DE FOCO ======================== */
@@ -3630,12 +3743,12 @@ Descripción: Eventos cuando un elemento obtiene o pierde el foco.
 
 /* 7.1 focus - Se dispara cuando un elemento recibe el foco */
 inputTexto.addEventListener("focus", () => {
-  console.log("El campo de texto tiene el foco.");
+	console.log("El campo de texto tiene el foco.");
 });
 
 /* 7.2 blur - Se dispara cuando un elemento pierde el foco */
 inputTexto.addEventListener("blur", () => {
-  console.log("El campo de texto perdió el foco.");
+	console.log("El campo de texto perdió el foco.");
 });
 
 /* ======================== 8. EJEMPLO PRÁCTICO: LIMPIAR ELEMENTOS ======================== */
@@ -3649,13 +3762,13 @@ const textoArea = document.querySelector("#textoArea");
 const main = document.querySelector("#main");
 
 btnBorrarTodo.onclick = function () {
-  textoArea.value = ""; // Limpia el contenido del textarea
-  const arrayDivsMain = main.querySelectorAll("div");
+	textoArea.value = ""; // Limpia el contenido del textarea
+	const arrayDivsMain = main.querySelectorAll("div");
 
-  for (let i = 4; i < arrayDivsMain.length; i++) {
-    arrayDivsMain[i].remove(); // Elimina todos los divs después del cuarto
-  }
-  console.log("Contenido y elementos borrados.");
+	for (let i = 4; i < arrayDivsMain.length; i++) {
+		arrayDivsMain[i].remove(); // Elimina todos los divs después del cuarto
+	}
+	console.log("Contenido y elementos borrados.");
 };
 
 /* ======================== RESUMEN ======================== */
@@ -3683,8 +3796,8 @@ Descripción: Cambia el color de fondo del cuerpo de la página al hacer clic en
 */
 const btnColorFondo = document.querySelector("#btnColorFondo");
 btnColorFondo.addEventListener("click", () => {
-  document.body.style.backgroundColor = "#f0f0f0";
-  console.log("Color de fondo cambiado a gris claro.");
+	document.body.style.backgroundColor = "#f0f0f0";
+	console.log("Color de fondo cambiado a gris claro.");
 });
 
 /* ======================== 2. EVENTOS DE TECLADO - MOSTRAR TEXTO EN TIEMPO REAL ======================== */
@@ -3696,7 +3809,7 @@ const inputRealTime = document.querySelector("#inputRealTime");
 const outputTexto = document.querySelector("#outputTexto");
 
 inputRealTime.addEventListener("input", () => {
-  outputTexto.textContent = `Texto ingresado: ${inputRealTime.value}`;
+	outputTexto.textContent = `Texto ingresado: ${inputRealTime.value}`;
 });
 
 /* ======================== 3. EVENTO SCROLL - MOSTRAR BOTÓN DE IR ARRIBA ======================== */
@@ -3706,16 +3819,16 @@ Descripción: Muestra un botón "Ir arriba" cuando se hace scroll en la página.
 */
 const btnIrArriba = document.querySelector("#btnIrArriba");
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
-    btnIrArriba.style.display = "block";
-  } else {
-    btnIrArriba.style.display = "none";
-  }
+	if (window.scrollY > 200) {
+		btnIrArriba.style.display = "block";
+	} else {
+		btnIrArriba.style.display = "none";
+	}
 });
 
 btnIrArriba.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  console.log("Volviendo al inicio.");
+	window.scrollTo({ top: 0, behavior: "smooth" });
+	console.log("Volviendo al inicio.");
 });
 
 /* ======================== 4. EVENTO SUBMIT - VALIDACIÓN DE FORMULARIO ======================== */
@@ -3728,11 +3841,11 @@ const inputNombre = document.querySelector("#inputNombre");
 const mensajeError = document.querySelector("#mensajeError");
 
 formValidar.addEventListener("submit", (e) => {
-  if (inputNombre.value.trim() === "") {
-    e.preventDefault();
-    mensajeError.textContent = "El campo no puede estar vacío.";
-    console.log("Formulario no enviado, campo vacío.");
-  }
+	if (inputNombre.value.trim() === "") {
+		e.preventDefault();
+		mensajeError.textContent = "El campo no puede estar vacío.";
+		console.log("Formulario no enviado, campo vacío.");
+	}
 });
 
 /* ======================== 5. EVENTO HOVER - MOSTRAR IMAGEN AMPLIADA ======================== */
@@ -3744,13 +3857,13 @@ const imgThumbnail = document.querySelector("#imgThumbnail");
 const imgAmpliada = document.querySelector("#imgAmpliada");
 
 imgThumbnail.addEventListener("mouseover", () => {
-  imgAmpliada.style.display = "block";
-  console.log("Imagen ampliada visible.");
+	imgAmpliada.style.display = "block";
+	console.log("Imagen ampliada visible.");
 });
 
 imgThumbnail.addEventListener("mouseout", () => {
-  imgAmpliada.style.display = "none";
-  console.log("Imagen ampliada oculta.");
+	imgAmpliada.style.display = "none";
+	console.log("Imagen ampliada oculta.");
 });
 
 /* ======================== 6. EVENTO RESIZE - CAMBIO DINÁMICO DE TEXTO ======================== */
@@ -3761,8 +3874,8 @@ Descripción: Cambia el texto dinámicamente cuando se redimensiona la ventana.
 const textoResize = document.querySelector("#textoResize");
 
 window.addEventListener("resize", () => {
-  textoResize.textContent = `Ancho de la ventana: ${window.innerWidth}px`;
-  console.log("Tamaño de ventana ajustado.");
+	textoResize.textContent = `Ancho de la ventana: ${window.innerWidth}px`;
+	console.log("Tamaño de ventana ajustado.");
 });
 
 /* ======================== 7. EVENTO CONTEXTMENU - BLOQUEAR MENÚ CONTEXTUAL ======================== */
@@ -3772,9 +3885,9 @@ Descripción: Bloquea el menú contextual del navegador en una imagen.
 */
 const imgBloqueada = document.querySelector("#imgBloqueada");
 imgBloqueada.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-  alert("El clic derecho está deshabilitado en esta imagen.");
-  console.log("Menú contextual bloqueado.");
+	e.preventDefault();
+	alert("El clic derecho está deshabilitado en esta imagen.");
+	console.log("Menú contextual bloqueado.");
 });
 
 /* ======================== 8. EVENTOS DE DRAG & DROP - CAMBIAR POSICIÓN DE ELEMENTOS ======================== */
@@ -3786,19 +3899,19 @@ const elementoArrastrable = document.querySelector("#elementoArrastrable");
 const dropArea = document.querySelector("#dropArea");
 
 elementoArrastrable.addEventListener("dragstart", (e) => {
-  e.dataTransfer.setData("text/plain", elementoArrastrable.id);
+	e.dataTransfer.setData("text/plain", elementoArrastrable.id);
 });
 
 dropArea.addEventListener("dragover", (e) => {
-  e.preventDefault();
+	e.preventDefault();
 });
 
 dropArea.addEventListener("drop", (e) => {
-  e.preventDefault();
-  const idElemento = e.dataTransfer.getData("text/plain");
-  const elemento = document.getElementById(idElemento);
-  dropArea.appendChild(elemento);
-  console.log("Elemento soltado en el área de drop.");
+	e.preventDefault();
+	const idElemento = e.dataTransfer.getData("text/plain");
+	const elemento = document.getElementById(idElemento);
+	dropArea.appendChild(elemento);
+	console.log("Elemento soltado en el área de drop.");
 });
 
 /* ======================== 9. EVENTOS DE FOCO - CAMBIAR BORDE AL INPUT ======================== */
@@ -3809,13 +3922,13 @@ Descripción: Resalta el borde de un input cuando obtiene o pierde el foco.
 const inputResaltado = document.querySelector("#inputResaltado");
 
 inputResaltado.addEventListener("focus", () => {
-  inputResaltado.style.border = "2px solid blue";
-  console.log("Input enfocado.");
+	inputResaltado.style.border = "2px solid blue";
+	console.log("Input enfocado.");
 });
 
 inputResaltado.addEventListener("blur", () => {
-  inputResaltado.style.border = "1px solid #ccc";
-  console.log("Input perdió el foco.");
+	inputResaltado.style.border = "1px solid #ccc";
+	console.log("Input perdió el foco.");
 });
 
 /* ======================== 10. EVENTO INPUT - SIMULACIÓN DE BÚSQUEDA ======================== */
@@ -3827,15 +3940,15 @@ const inputBusqueda = document.querySelector("#inputBusqueda");
 const listaElementos = document.querySelectorAll(".elementoLista");
 
 inputBusqueda.addEventListener("input", () => {
-  const textoBusqueda = inputBusqueda.value.toLowerCase();
-  listaElementos.forEach((item) => {
-    if (item.textContent.toLowerCase().includes(textoBusqueda)) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
-  });
-  console.log(`Texto de búsqueda: ${textoBusqueda}`);
+	const textoBusqueda = inputBusqueda.value.toLowerCase();
+	listaElementos.forEach((item) => {
+		if (item.textContent.toLowerCase().includes(textoBusqueda)) {
+			item.style.display = "block";
+		} else {
+			item.style.display = "none";
+		}
+	});
+	console.log(`Texto de búsqueda: ${textoBusqueda}`);
 });
 
 /* ======================== RESUMEN ======================== */
@@ -3850,3 +3963,1581 @@ inputBusqueda.addEventListener("input", () => {
 
 **Uso común**: Validación de formularios, animaciones visuales, actualización de contenido dinámico y funcionalidades de usuario.
 =========================================================== */
+
+
+/* ========================== CAPÍTULO – CANVAS EN HTML5 (COMPLETO) ========================== */
+
+/*
+0. Preparación
+Descripción: Obtener el elemento <canvas> del DOM y su contexto 2D para poder dibujar.
+*/
+const canvas = document.getElementById("miCanvas");
+const ctx = canvas.getContext("2d");
+
+
+/* ========================== FIGURAS BÁSICAS (RECTÁNGULOS) ========================== */
+
+/*
+1. Rectángulos
+Descripción: Figuras rápidas sin necesidad de path.
+
+- fillRect(x, y, w, h)    → Dibuja rectángulo relleno.
+- strokeRect(x, y, w, h)  → Dibuja solo el borde.
+- clearRect(x, y, w, h)   → Borra la zona a transparente.
+*/
+ctx.fillStyle = "#4caf50";
+ctx.fillRect(10, 10, 120, 60);
+ctx.strokeStyle = "#1b5e20";
+ctx.lineWidth = 3;
+ctx.strokeRect(140, 10, 120, 60);
+ctx.clearRect(30, 25, 40, 30);
+
+
+/* ========================== PATHS (RUTAS) Y FORMAS ========================== */
+
+/*
+2. Rutas (paths) y líneas
+Descripción: beginPath() inicia una ruta; moveTo() posiciona; lineTo() crea segmentos; closePath() cierra.
+
+- beginPath()
+- moveTo(x, y)
+- lineTo(x, y)
+- closePath()
+- stroke() / fill()
+*/
+ctx.beginPath();
+ctx.moveTo(10, 100);
+ctx.lineTo(200, 100);
+ctx.lineTo(200, 160);
+ctx.closePath(); // opcional; une al punto inicial
+ctx.stroke();
+
+/*
+3. Arcos y círculos
+Descripción: arc() dibuja arcos/círculos; arcTo() crea tangencias.
+
+- arc(x, y, radio, angInicioRad, angFinalRad, antiHorario=false)
+- arcTo(x1, y1, x2, y2, radio)
+*/
+ctx.beginPath();
+ctx.arc(80, 200, 40, 0, Math.PI * 2);
+ctx.fillStyle = "#2196f3";
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(150, 180);
+ctx.arcTo(220, 180, 220, 240, 30);
+ctx.lineTo(220, 240);
+ctx.stroke();
+
+/*
+4. Curvas
+Descripción: Curvas suaves con control.
+
+- quadraticCurveTo(cpx, cpy, x, y)
+- bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+*/
+ctx.beginPath();
+ctx.moveTo(10, 260);
+ctx.quadraticCurveTo(80, 220, 150, 260);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(10, 300);
+ctx.bezierCurveTo(60, 260, 120, 340, 180, 300);
+ctx.stroke();
+
+/*
+5. Detección de punto en ruta
+Descripción: Saber si un punto cae dentro de una figura/path.
+
+- isPointInPath(x, y)
+- isPointInStroke(x, y)
+*/
+ctx.beginPath();
+ctx.rect(220, 260, 80, 50);
+const dentro = ctx.isPointInPath(230, 270);
+console.log("Punto dentro del rectángulo:", dentro);
+
+
+/* ========================== ESTILOS DE TRAZO Y RELLENO ========================== */
+
+/*
+6. Estilos de línea
+- lineWidth        → grosor
+- lineCap          → "butt" | "round" | "square"
+- lineJoin         → "miter" | "round" | "bevel"
+- miterLimit       → límite de inglete
+- setLineDash([])  → patrón de guiones
+- getLineDash()
+- lineDashOffset
+*/
+ctx.lineWidth = 5;
+ctx.lineCap = "round";
+ctx.lineJoin = "round";
+ctx.setLineDash([10, 6]); // 10 dibuja, 6 espacio
+ctx.lineDashOffset = 0;
+ctx.beginPath();
+ctx.moveTo(10, 360);
+ctx.lineTo(190, 360);
+ctx.stroke();
+ctx.setLineDash([]); // restaurar sin guiones
+
+/*
+7. Colores de trazo y relleno
+- strokeStyle  → color/bigradiente/patrón para bordes
+- fillStyle    → color/bigradiente/patrón para rellenos
+*/
+ctx.fillStyle = "#ff9800";
+ctx.strokeStyle = "#e65100";
+
+/*
+8. Gradientes
+- createLinearGradient(x0, y0, x1, y1)
+- createRadialGradient(x0, y0, r0, x1, y1, r1)
+- gradient.addColorStop(pos, color)
+*/
+const gradLin = ctx.createLinearGradient(10, 390, 210, 390);
+gradLin.addColorStop(0, "#ff8a80");
+gradLin.addColorStop(1, "#d500f9");
+ctx.fillStyle = gradLin;
+ctx.fillRect(10, 380, 200, 40);
+
+const gradRad = ctx.createRadialGradient(280, 400, 5, 300, 400, 40);
+gradRad.addColorStop(0, "#fff59d");
+gradRad.addColorStop(1, "#f4511e");
+ctx.fillStyle = gradRad;
+ctx.beginPath();
+ctx.arc(300, 400, 40, 0, Math.PI * 2);
+ctx.fill();
+
+/*
+9. Patrones (Pattern) con imágenes
+- createPattern(imagen, repetición) → "repeat" | "repeat-x" | "repeat-y" | "no-repeat"
+*/
+const patternImg = new Image();
+patternImg.src = "pattern.png";
+patternImg.onload = () => {
+  const pattern = ctx.createPattern(patternImg, "repeat");
+  ctx.fillStyle = pattern;
+  ctx.fillRect(350, 360, 120, 60);
+};
+
+/*
+10. Sombras
+- shadowColor
+- shadowBlur
+- shadowOffsetX
+- shadowOffsetY
+*/
+ctx.shadowColor = "rgba(0,0,0,0.35)";
+ctx.shadowBlur = 8;
+ctx.shadowOffsetX = 4;
+ctx.shadowOffsetY = 4;
+ctx.fillStyle = "#8bc34a";
+ctx.fillRect(490, 360, 80, 60);
+// Restablecer sombra si no la quieres permanente:
+ctx.shadowColor = "transparent";
+
+
+/* ========================== TEXTO ========================== */
+
+/*
+11. Texto
+- font              → "20px Arial"
+- textAlign         → "left" | "right" | "center" | "start" | "end"
+- textBaseline      → "top" | "hanging" | "middle" | "alphabetic" | "ideographic" | "bottom"
+- direction         → "ltr" | "rtl" | "inherit"
+- fillText(text, x, y, maxWidth?)
+- strokeText(text, x, y, maxWidth?)
+- measureText(text) → métricas (width, etc.)
+*/
+ctx.font = "20px Arial";
+ctx.textAlign = "left";
+ctx.textBaseline = "alphabetic";
+ctx.fillStyle = "#000";
+ctx.fillText("Texto relleno", 10, 450);
+ctx.strokeText("Texto con borde", 10, 480);
+const metr = ctx.measureText("Medir ancho");
+console.log("Ancho de texto:", metr.width);
+
+
+/* ========================== IMÁGENES Y SPRITES ========================== */
+
+/*
+12. Dibujar imágenes
+- drawImage(img, dx, dy)
+- drawImage(img, dx, dy, dw, dh)
+- drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
+- imageSmoothingEnabled → suavizado al escalar (true por defecto)
+*/
+const img = new Image();
+img.src = "sprite.png";
+img.onload = () => {
+  // Imagen completa en (10, 500)
+  ctx.drawImage(img, 10, 500);
+
+  // Escalada a 64x64 en (90, 500)
+  ctx.drawImage(img, 90, 500, 64, 64);
+
+  // Recorte (sx,sy,sw,sh) → destino (dx,dy,dw,dh)
+  ctx.imageSmoothingEnabled = true;
+  ctx.drawImage(img, 0, 0, 64, 64, 170, 500, 64, 64);
+};
+
+/*
+12.1 drawImage PARA SPRITES (explicado campo a campo)
+Descripción: pinta un frame (recorte) del spritesheet en la posición y tamaño deseados.
+*/
+ctx.drawImage(
+  /* imagen  */ objeto.imagen,     // SpriteSheet (Image()) ya cargado.
+  /* sx      */ objeto.SpriteX,    // X de recorte dentro de la imagen (px).
+  /* sy      */ objeto.SpriteY,    // Y de recorte dentro de la imagen (px).
+  /* sw      */ objeto.SpriteTamX, // Ancho del frame a recortar (px).
+  /* sh      */ objeto.SpriteTamY, // Alto  del frame a recortar (px).
+  /* dx      */ objeto.x,          // X destino en canvas (px).
+  /* dy      */ objeto.y,          // Y destino en canvas (px).
+  /* dw      */ objeto.tamX,       // Ancho final en pantalla (px) (escala).
+  /* dh      */ objeto.tamY        // Alto  final en pantalla (px) (escala).
+);
+
+/*
+12.2 Animación de sprites (cíclica)
+Descripción: Avanza frames de forma circular.
+*/
+let posicion = 0;
+const arraySirena = [/* frames o estados */];
+function spriteCiclico(){
+  posicion = (posicion + 1) % arraySirena.length;
+}
+
+
+/* ========================== TRANSFORMACIONES Y ESTADO ========================== */
+
+/*
+13. Transformaciones
+- save() / restore()         → guardar/restaurar estado de estilos/transformaciones
+- translate(x, y)            → traslada el origen
+- rotate(rad)                → rota en radianes
+- scale(sx, sy)              → escala
+- transform(a, b, c, d, e, f)→ aplica matriz
+- setTransform(a,b,c,d,e,f)  → establece matriz (sustituye la actual)
+- resetTransform()           → identidad (sin transformaciones)
+*/
+ctx.save();
+ctx.translate(300, 540);
+ctx.rotate(Math.PI / 6);
+ctx.scale(1.2, 1.2);
+ctx.fillStyle = "#673ab7";
+ctx.fillRect(-25, -25, 50, 50);
+ctx.restore(); // vuelve al estado previo
+
+
+/* ========================== COMPOSICIÓN Y TRANSPARENCIA ========================== */
+
+/*
+14. Composición
+- globalAlpha (0..1)                          → transparencia global
+- globalCompositeOperation                    → modo de fusión:
+  "source-over"(defecto), "destination-over", "source-in", "destination-in",
+  "source-out", "destination-out", "lighter", "copy", "xor", etc.
+*/
+ctx.globalAlpha = 0.6;
+ctx.fillStyle = "#03a9f4";
+ctx.fillRect(360, 500, 80, 80);
+ctx.globalAlpha = 1;
+
+ctx.globalCompositeOperation = "lighter"; // suma colores
+ctx.fillStyle = "#f44336";
+ctx.beginPath();
+ctx.arc(420, 540, 40, 0, Math.PI * 2);
+ctx.fill();
+ctx.globalCompositeOperation = "source-over"; // restaurar
+
+
+/* ========================== PIXELES (ImageData) ========================== */
+
+/*
+15. Manipulación de píxeles
+- createImageData(w, h)
+- getImageData(x, y, w, h)
+- putImageData(imageData, dx, dy)
+- imageData.data → Uint8ClampedArray [r,g,b,a,...] (0..255)
+*/
+const imgData = ctx.getImageData(10, 10, 50, 50);
+for (let i = 0; i < imgData.data.length; i += 4) {
+  // Invertir colores: r,g,b; alfa (i+3) se deja igual
+  imgData.data[i]   = 255 - imgData.data[i];     // R
+  imgData.data[i+1] = 255 - imgData.data[i+1];   // G
+  imgData.data[i+2] = 255 - imgData.data[i+2];   // B
+}
+ctx.putImageData(imgData, 10, 10);
+
+
+/* ========================== CLIPPING (RECORTE) ========================== */
+
+/*
+16. Clip
+Descripción: Limita el dibujo a una región definida por un path.
+- clip()
+*/
+ctx.save();
+ctx.beginPath();
+ctx.arc(580, 70, 50, 0, Math.PI * 2);
+ctx.clip(); // todo lo que se dibuje ahora queda recortado al círculo
+ctx.fillStyle = "#cddc39";
+ctx.fillRect(530, 20, 120, 120);
+ctx.restore();
+
+
+/* ========================== ANIMACIONES (GAME LOOP) ========================== */
+
+/*
+17. Animación con requestAnimationFrame
+Descripción: Bucle de render a ~60fps; limpiar con clearRect; usar deltaTime para velocidad constante.
+*/
+let posX = 10;
+let velX = 120; // px/seg
+let previo = performance.now();
+
+function loop(tAhora){
+  const dt = (tAhora - previo) / 1000; // segundos
+  previo = tAhora;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  posX += velX * dt;
+
+  // Rebote simple
+  if (posX < 0 || posX + 50 > canvas.width) velX *= -1;
+
+  ctx.fillStyle = "#009688";
+  ctx.fillRect(posX, 600, 50, 40);
+
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+
+/* ========================== EVENTOS ========================== */
+
+/*
+18. Eventos del ratón y teclado
+Descripción: El canvas no trae eventos especiales; usamos eventos DOM.
+
+- click / mousedown / mouseup / mousemove
+- keydown / keyup (en window/document)
+*/
+canvas.addEventListener("click", (e) => {
+  const x = e.offsetX;
+  const y = e.offsetY;
+  console.log("Click en:", x, y);
+});
+
+window.addEventListener("keydown", (e) => {
+  console.log("Tecla:", e.key);
+});
+
+
+/* ========================== COLISIONES BÁSICAS ========================== */
+
+/*
+19. Colisión con paredes (AABB)
+Descripción: Comprobar límites y rebotar.
+*/
+let bx = 10, by = 660, vx = 180, vy = 120, bw = 40, bh = 40;
+function moverCaja(ts){
+  ctx.clearRect(0, 640, canvas.width, 80);
+  bx += vx / 60;
+  by += vy / 60;
+
+  if (bx < 0 || bx + bw > canvas.width)  vx *= -1;
+  if (by < 640 || by + bh > canvas.height) vy *= -1;
+
+  ctx.fillStyle = "#ff5722";
+  ctx.fillRect(bx, by, bw, bh);
+  requestAnimationFrame(moverCaja);
+}
+requestAnimationFrame(moverCaja);
+
+
+/* ========================== GUARDAR/RESTABLECER ESTADO ========================== */
+
+/*
+20. save() / restore()
+Descripción: Guardar estado de estilos/transformaciones para no “contaminar” otros dibujos.
+*/
+ctx.save();
+ctx.fillStyle = "#795548";
+ctx.translate(700, 80);
+ctx.rotate(Math.PI / 8);
+ctx.fillRect(-20, -20, 40, 40);
+ctx.restore(); // estilos y transformaciones vuelven a su estado anterior
+
+
+/* ========================== BUENAS PRÁCTICAS RÁPIDAS ========================== */
+
+/*
+- Llamar a getContext("2d") una sola vez y reutilizar ctx.
+- Limpiar cada frame con clearRect.
+- Usar requestAnimationFrame en lugar de setInterval para animaciones.
+- Usar save()/restore() para aislar transformaciones y estilos.
+- Precargar imágenes y esperar a onload antes de dibujar.
+- Usar delta time (dt) para movimientos consistentes.
+- Desactivar sombras/guiones cuando no se usen.
+*/
+
+
+
+/* ========================== SPRITES – FUNCIÓN PARA CICLAR FRAMES ========================== */
+
+/*
+spriteCiclico()
+Descripción:
+Esta función avanza el índice del sprite (posicion) de manera circular.
+Cuando llega al último frame del spritesheet vuelve automáticamente al primero.
+
+Explicación:
+(posicion + 1) → pasa al siguiente frame
+% arraySirena.length → evita salirse del array y reinicia a 0 cuando llega al final
+*/
+function spriteCiclico() {
+    posicion = (posicion + 1) % arraySirena.length;
+}
+
+/*
+Ejemplo de uso:
+- arraySirena = [0,1,2,3]   → frames del spritesheet
+- posicion = 0              → frame inicial
+
+Llamadas sucesivas a spriteCiclico():
+0 → 1 → 2 → 3 → (vuelve) → 0 → 1 → 2 → ...
+Siempre dentro del rango correcto.
+*/
+
+/*
+Opción avanzada con tiempo (spriteCiclicoConTiempo)
+Descripción:
+Controla cada cuántos milisegundos cambia el frame.
+Útil para animaciones suaves (correr, caminar, volar…)
+*/
+let tiempoAnterior = 0;
+let intervalo = 100; // cambiar sprite cada 100ms
+
+function spriteCiclicoConTiempo(tiempoActual) {
+    if (tiempoActual - tiempoAnterior >= intervalo) {
+        posicion = (posicion + 1) % arraySirena.length;
+        tiempoAnterior = tiempoActual;
+    }
+}
+
+/*
+Uso dentro de un bucle de animación:
+function loop(t){
+    spriteCiclicoConTiempo(t); // actualiza frame
+    //... drawImage usando posicion ...
+    requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+*/
+
+/* ========================== FIN DEL BLOQUE DE SPRITES CÍCLICOS ========================== */
+
+
+/* ========================== CLASE Spritesheet PARA ANIMAR SPRITES EJEMPLO GENÉRICO ========================== */
+
+class Sprite {
+    constructor(config) {
+
+        /*
+        config contiene:
+        - src: ruta de la imagen del spritesheet
+        - frames: matriz con [sx, sy] de cada frame
+        - recorteX, recorteY: tamaño del frame a recortar
+        - pintarX, pintarY: tamaño del frame en pantalla
+        - x, y: posición de pintado en el canvas
+        */
+
+        this.x = config.x || 0;               // Posición X donde se dibuja
+        this.y = config.y || 0;               // Posición Y donde se dibuja
+
+        this.recorteX = config.recorteX;      // Tamaño X a recortar del spritesheet
+        this.recorteY = config.recorteY;      // Tamaño Y a recortar del spritesheet
+
+        this.pintarX = config.pintarX;        // Tamaño X dibujado en canvas
+        this.pintarY = config.pintarY;        // Tamaño Y dibujado en canvas
+
+        this.frames = config.frames;          // Array con coordenadas de cada frame: [[sx,sy],...]
+        this.posicion = 0;                    // Frame inicial
+        this.totalFrames = this.frames.length;
+
+        // Imagen del spritesheet
+        this.imagen = new Image();
+        this.imagen.src = config.src;
+    }
+
+    /* ========================== DIBUJAR EL SPRITE ========================== */
+    pintar(ctx) {
+        ctx.drawImage(
+            this.imagen,                            // Imagen completa del spritesheet
+            this.frames[this.posicion][0],          // sx → posición X del recorte
+            this.frames[this.posicion][1],          // sy → posición Y del recorte
+            this.recorteX,                           // sw → ancho del recorte
+            this.recorteY,                           // sh → alto del recorte
+            this.x,                                  // dx → posición X en canvas
+            this.y,                                  // dy → posición Y en canvas
+            this.pintarX,                            // dw → ancho en pantalla
+            this.pintarY                             // dh → alto en pantalla
+        );
+    }
+
+    /* ========================== ANIMAR (MOVER SPRITE FRAME) ========================== */
+    moverSprite() {
+        /*
+        Avanza al siguiente frame del array frames.
+        % this.totalFrames → vuelve a 0 cuando llega al final (cíclico)
+        */
+        this.posicion = (this.posicion + 1) % this.totalFrames;
+    }
+
+    /* ========================== FUNCIÓN COMPLETA DE ANIMACIÓN ========================== */
+    animacion(ctx) {
+        this.pintar(ctx);     // Dibuja el frame actual
+        this.moverSprite();   // Avanza al siguiente frame
+    }
+}
+
+
+
+
+/* ========================== FIN DEL MÓDULO COMPLETO DE CANVAS ========================== */
+
+
+
+
+
+
+/* SHORCUTS JS PARA VSCODE */
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }     /*
+/* 	"document.getElementById()": {
+		"prefix": "gebid",
+			"body": [
+				"const ${1:elemento} = document.getElementById('${2:idElemento}');"
+			],
+				"description": "Obtiene el elemento del DOM con el ID especificado y lo almacena en una variable."
+	},
+	"document.querySelector()": {
+		"prefix": "dqs",
+			"body": [
+				"const ${1:elemento} = document.querySelector('${2:selectorCSS}');"
+			],
+				"description": "Obtiene el primer elemento del DOM que coincide con el selector CSS especificado y lo almacena en una variable."
+	},
+	"document.querySelectorAll()": {
+		"prefix": "dqsa",
+			"body": [
+				"const ${1:elementos} = document.querySelectorAll('${2:selectorCSS}');"
+			],
+				"description": "Obtiene todos los elementos del DOM que coinciden con el selector CSS especificado y los almacena en una variable como una NodeList."
+	},
+	"element.addEventListener()": {
+		"prefix": "eae",
+			"body": [
+				"${1:elemento}.addEventListener('${2:evento}', ${3:funcion});"
+			],
+				"description": "Añade un evento escuchador al elemento especificado para el tipo de evento dado y ejecuta la función cuando ocurre el evento."
+	},
+	"element.innerHTML": {
+		"prefix": "eih",
+			"body": [
+				"${1:elemento}.innerHTML = '${2:contenidoHTML}';"
+			],
+				"description": "Establece o obtiene el contenido HTML interior del elemento especificado."
+	},
+	"element.innerText": {
+		"prefix": "eit",
+			"body": [
+				"${1:elemento}.innerText = '${2:contenidoTexto}';"
+			],
+				"description": "Establece o obtiene el contenido de texto interior del elemento especificado, respetando los estilos CSS como 'display: none'."
+	},
+	"element.textContent": {
+		"prefix": "etc",
+			"body": [
+				"${1:elemento}.textContent = '${2:contenidoTexto}';"
+			],
+				"description": "Establece o obtiene el contenido de texto interior del elemento especificado, incluyendo todos los elementos y espacios."
+	},
+	"element.style": {
+		"prefix": "es",
+			"body": [
+				"${1:elemento}.style.${2:propiedadCSS} = '${3:valorCSS}';"
+			],
+				"description": "Establece una propiedad de estilo CSS en el elemento especificado."
+	},
+	"window.alert()": {
+		"prefix": "wa",
+			"body": [
+				"window.alert('${1:mensaje}');"
+			],
+				"description": "Muestra un cuadro de alerta con el mensaje especificado."
+	},
+	"window.confirm()": {
+		"prefix": "wc",
+			"body": [
+				"const ${1:resultado} = window.confirm('${2:mensaje}');"
+			],
+				"description": "Muestra un cuadro de confirmación con el mensaje especificado y devuelve un valor booleano según la respuesta del usuario."
+	},
+	"window.prompt()": {
+		"prefix": "wp",
+			"body": [
+				"let ${1:respuesta} = window.prompt(${2:'mensaje',} '${3:valorPorDefecto}');"
+			],
+				"description": "Muestra un cuadro de diálogo que solicita al usuario una entrada y devuelve el valor introducido por el usuario."
+	},
+	"window.open()": {
+		"prefix": "wo",
+			"body": [
+				"const ${1:nuevaVentana} = window.open('${2:url}', '${3:nombre}', '${4:caracteristicas}');"
+			],
+				"description": "Abre una nueva ventana del navegador con la URL, el nombre y las características especificadas."
+	},
+	"document.write()": {
+		"prefix": "dw",
+			"body": [
+				"document.write('${1:contenidoHTML}');"
+			],
+				"description": "Escribe contenido HTML directamente en el documento."
+	},
+	"console.log()": {
+		"prefix": "cl",
+			"body": [
+				"console.log('${1:mensaje}', ${2:variable});"
+			],
+				"description": "Imprime un mensaje y una variable en la consola del navegador para depuración."
+	},
+	"document.createElement()": {
+		"prefix": "dce",
+			"body": [
+				"const ${1:elemento} = document.createElement('${2:tipoElemento}');"
+			],
+				"description": "Crea un nuevo elemento del tipo especificado y lo almacena en una variable."
+	},
+	"element.appendChild()": {
+		"prefix": "ac",
+			"body": [
+				"${1:padre}.appendChild(${2:hijo});"
+			],
+				"description": "Añade un nodo hijo al nodo padre especificado."
+	},
+	"element.removeChild()": {
+		"prefix": "rc",
+			"body": [
+				"${1:padre}.removeChild(${2:hijo});"
+			],
+				"description": "Elimina un nodo hijo del nodo padre especificado."
+	},
+	"element.setAttribute()": {
+		"prefix": "sa",
+			"body": [
+				"${1:elemento}.setAttribute('${2:atributo}', '${3:valor}');"
+			],
+				"description": "Establece el valor de un atributo en el elemento especificado."
+	},
+	"element.getAttribute()": {
+		"prefix": "ga",
+			"body": [
+				"const ${1:valorAtributo} = ${2:elemento}.getAttribute('${3:atributo}');"
+			],
+				"description": "Obtiene el valor de un atributo del elemento especificado y lo almacena en una variable."
+	},
+	"objectAssignQS": {
+		"prefix": "objectassignQS",
+			"body": [
+				"const ${1:elemento} = document.querySelector('${2:selector}');",
+				"",
+				"Object.assign($1, {",
+				"    ${3:propiedad}: ${4:valor}",
+				"});",
+				"",
+				"console.log($1);"
+			],
+				"description": "Snippet para cambiar propiedades de un elemento HTML usando Object.assign. Selecciona un elemento en el DOM usando querySelector y asigna nuevas propiedades al elemento utilizando Object.assign."
+	},
+	"objectAssign": {
+		"prefix": "objectAssign",
+			"body": [
+				"Object.assign(${1:elemento}, {",
+				"    ${2:propiedad/clave} : ${3:valor},",
+				"});"
+			],
+				"description": "Cambia las propiedades de un elemento HTML usando Object.assign. Asigna nuevas propiedades a un elemento HTML existente utilizando Object.assign."
+	},
+	"Extraer Claves Únicas de un Array de Objetos": {
+		"prefix": "extraerClavesDeArrayDeObjetos",
+			"body": [
+				"const extraerClavesUnicas = (arrayDeObjetos) => {", // arrayDeObjetos: tu array de objetos
+				"  const clavesUnicas = []; // clavesUnicas: array para almacenar las claves únicas",
+				"  ",
+				"  arrayDeObjetos.forEach(obj => {", // obj: cada objeto en el array
+				"    const claves = Object.keys(obj); // claves: las claves del objeto actual",
+				"    claves.forEach(clave => {", // clave: cada clave en el objeto actual",
+				"      if (!clavesUnicas.includes(clave)) {", // Verifica si la clave no está en clavesUnicas",
+				"        clavesUnicas.push(clave); // Añade la clave a clavesUnicas si no está ya presente",
+				"      }",
+				"    });",
+				"  });",
+				"  ",
+				"  return clavesUnicas; // Devuelve el array de claves únicas",
+				"};",
+				"",
+				"const resultado = extraerClavesUnicas(arrayDeObjetos); // arrayDeObjetos: tu array de objetos",
+				"console.log(resultado); // Muestra el resultado en la consola"
+			],
+				"description": "Extrae claves únicas de un array de objetos recorriendo cada objeto y comprobando si las claves ya existen en el array de claves únicas antes de añadirlas."
+	},
+	"Recorrer las claves de cada objeto en el array": {
+		"prefix": "recorrerClaves",
+			"body": [
+				"${1:// Array de objetos de ejemplo\nconst arrayDeObjetos = [\n    { nombre: \"Juan\", edad: 30, ciudad: \"Madrid\" },\n    { nombre: \"Ana\", edad: 25, ciudad: \"Barcelona\" },\n    { nombre: \"Carlos\", edad: 35, ciudad: \"Valencia\" }\n]};",
+				"",
+				"for (const obj of arrayDeObjetos) {",
+				"    for (const key of Object.keys(obj)) {",
+				"        console.log(key);         // Muestra las claves: \"nombre\", \"edad\", \"ciudad\"",
+				"        console.log(obj[key]);    // Muestra los va ¡lores de esas claves",
+				"    }",
+				"}"
+			],
+				"description": "Recorre las claves de cada objeto en el array y muestra las claves y los valores."
+	},
+	"Recorrer las claves y valores de cada objeto en el array": {
+		"prefix": "recorrerClavesYValores",
+			"body": [
+				"${1:// Array de objetos de ejemplo\nconst arrayDeObjetos = [\n    { nombre: \"Juan\", edad: 30, ciudad: \"Madrid\" },\n    { nombre: \"Ana\", edad: 25, ciudad: \"Barcelona\" },\n    { nombre: \"Carlos\", edad: 35, ciudad: \"Valencia\" }\n]};",
+				"",
+				"for (const obj of arrayDeObjetos) {",
+				"    for (const [key, value] of Object.entries(obj)) {",
+				"        console.log(key);   // Muestra la clave",
+				"        console.log(value); // Muestra el valor",
+				"    }",
+				"}"
+			],
+				"description": "Recorre las claves y valores de cada objeto en el array y los muestra."
+	},
+	"Recorrer solo los valores de cada objeto en el array": {
+		"prefix": "recorrerValores",
+			"body": [
+				"${1:// Array de objetos de ejemplo\nconst arrayDeObjetos = [\n    { nombre: \"Juan\", edad: 30, ciudad: \"Madrid\" },\n    { nombre: \"Ana\", edad: 25, ciudad: \"Barcelona\" },\n    { nombre: \"Carlos\", edad: 35, ciudad: \"Valencia\" }\n]};",
+				"",
+				"for (const obj of arrayDeObjetos) {",
+				"    for (const value of Object.values(obj)) {",
+				"        console.log(value);  // Muestra solo los valores de cada objeto",
+				"    }",
+				"}"
+			],
+				"description": "Recorre solo los valores de cada objeto en el array y los muestra."
+	},
+	"Clase Persona con Validaciones": {
+		"prefix": "clasePersona",
+			"body": [
+				"class Persona {",
+				"    constructor(nombre, apellido, fechaNacimiento) {",
+				"        this.setNombre(nombre);",
+				"        this.setApellido(apellido);",
+				"        this.setNacimiento(fechaNacimiento);",
+				"    }",
+				"",
+				"    // Métodos GETTERS",
+				"    getNombre() {",
+				"        return this._nombre;",
+				"    }",
+				"",
+				"    getApellido() {",
+				"        return this._apellido;",
+				"    }",
+				"",
+				"    getNacimiento() {",
+				"        return this._fechaNacimiento;",
+				"    }",
+				"",
+				"    // Métodos SETTERS con validaciones",
+				"    setNombre(nombre) {",
+				"        if (this.#esValido(nombre)) {",
+				"            this._nombre = nombre;",
+				"        } else {",
+				"            throw new Error(\"El nombre no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    setApellido(apellido) {",
+				"        if (this.#esValido(apellido)) {",
+				"            this._apellido = apellido;",
+				"        } else {",
+				"            throw new Error(\"El apellido no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    setNacimiento(fechaNacimiento) {",
+				"        if (this.#esValido(fechaNacimiento) && this.#esFechaValida(fechaNacimiento)) {",
+				"            this._fechaNacimiento = fechaNacimiento;",
+				"        } else {",
+				"            throw new Error(\"La fecha de nacimiento no es válida o está vacía.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Métodos privados para validación",
+				"    #esValido(valor) {",
+				"        return valor && valor.trim() !== \"\";",
+				"    }",
+				"",
+				"    #esFechaValida(fecha) {",
+				"        const regex = /^(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[0-2])[-/]\\d{4}$/;",
+				"        return regex.test(fecha);",
+				"    }",
+				"}",
+				"",
+				"// Ejemplo de uso",
+				"try {",
+				"    let persona1 = new Persona(\"Juan\", \"Pérez\", \"01-01-1990\");",
+				"    console.log(`Nombre: ${persona1.getNombre()}`);",
+				"    console.log(`Apellido: ${persona1.getApellido()}`);",
+				"    console.log(`Fecha de Nacimiento: ${persona1.getNacimiento()}`);",
+				"",
+				"    // Intento de asignar valores inválidos",
+				"    persona1.setNombre(\" \"); // Error",
+				"} catch (error) {",
+				"    console.error(error.message);",
+				"}",
+				"",
+				"try {",
+				"    let persona2 = new Persona(\"Ana\", \"García\", \"31/02/2020\"); // Fecha inválida",
+				"} catch (error) {",
+				"    console.error(error.message);",
+				"}"
+			],
+				"description": "Clase Persona con validaciones para nombre, apellido y fecha de nacimiento."
+	},
+	"Clase Empleado extendida de Persona con Importación": {
+		"prefix": "classEmpleado",
+			"body": [
+				"// Importación de la clase Persona",
+				"import { Persona } from './Persona.js';",
+				"",
+				"class Empleado extends Persona {",
+				"    constructor(nombre, apellido, fechaNacimiento, salario) {",
+				"        super(nombre, apellido, fechaNacimiento);",
+				"        this.setSalario(salario);",
+				"    }",
+				"",
+				"    // GETTER para salario",
+				"    getSalario() {",
+				"        return this._salario;",
+				"    }",
+				"",
+				"    // SETTER con validación para salario",
+				"    setSalario(salario) {",
+				"        if (this.#esSalarioValido(salario)) {",
+				"            this._salario = salario;",
+				"        } else {",
+				"            throw new Error(\"El salario debe ser un número positivo.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método privado para validar salario",
+				"    #esSalarioValido(salario) {",
+				"        return !isNaN(salario) && salario > 0;",
+				"    }",
+				"",
+				"    // Método adicional",
+				"    mostrarInformacion() {",
+				"        console.log(`Nombre: ${this.getNombre()}, Apellido: ${this.getApellido()}, Fecha de Nacimiento: ${this.getNacimiento()}, Salario: ${this.getSalario()}`);",
+				"    }",
+				"}",
+				"",
+				"// Ejemplo de uso",
+				"try {",
+				"    let empleado1 = new Empleado(\"Carlos\", \"López\", \"15-05-1990\", 3000);",
+				"    empleado1.mostrarInformacion();",
+				"",
+				"    empleado1.setSalario(3500); // Modificación válida",
+				"    console.log(`Nuevo Salario: ${empleado1.getSalario()}`);",
+				"",
+				"    empleado1.setSalario(-500); // Error",
+				"} catch (error) {",
+				"    console.error(error.message);",
+				"}",
+				"",
+				"// Exportar la clase Empleado (opcional)",
+				"export { Empleado };"
+			],
+				"description": "Clase Empleado que extiende de Persona, con validación para salario e importación de la clase padre."
+	},
+	"Clase Animal": {
+		"prefix": "claseAnimal",
+			"body": [
+				"export class Animal {",
+				"    constructor(nombre, edad) {",
+				"        this.setNombre(nombre);",
+				"        this.setEdad(edad);",
+				"    }",
+				"",
+				"    // GETTERS",
+				"    getNombre() {",
+				"        return this._nombre;",
+				"    }",
+				"",
+				"    getEdad() {",
+				"        return this._edad;",
+				"    }",
+				"",
+				"    // SETTERS con validación",
+				"    setNombre(nombre) {",
+				"        if (nombre && nombre.trim() !== \"\") {",
+				"            this._nombre = nombre;",
+				"        } else {",
+				"            throw new Error(\"El nombre no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    setEdad(edad) {",
+				"        if (!isNaN(edad) && edad > 0) {",
+				"            this._edad = edad;",
+				"        } else {",
+				"            throw new Error(\"La edad debe ser un número positivo.\");",
+				"        }",
+				"    }",
+				"}"
+			],
+				"description": "Clase Animal con propiedades nombre y edad, con validaciones."
+	},
+	"Clase Gato extendida de Animal": {
+		"prefix": "claseGato",
+			"body": [
+				"import { Animal } from './Animal.js';",
+				"",
+				"export class Gato extends Animal {",
+				"    constructor(nombre, edad, color) {",
+				"        super(nombre, edad);",
+				"        this.setColor(color);",
+				"    }",
+				"",
+				"    // GETTER para color",
+				"    getColor() {",
+				"        return this._color;",
+				"    }",
+				"",
+				"    // SETTER con validación para color",
+				"    setColor(color) {",
+				"        if (color && color.trim() !== \"\") {",
+				"            this._color = color;",
+				"        } else {",
+				"            throw new Error(\"El color no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método adicional",
+				"    maullar() {",
+				"        console.log(`${this.getNombre()} está maullando: ¡Miau Miau!`);",
+				"    }",
+				"}"
+			],
+				"description": "Clase Gato que extiende de Animal, con propiedad color y método maullar."
+	},
+	"Clase Perro extendida de Animal": {
+		"prefix": "clasePerro",
+			"body": [
+				"import { Animal } from './Animal.js';",
+				"",
+				"export class Perro extends Animal {",
+				"    constructor(nombre, edad, raza) {",
+				"        super(nombre, edad);",
+				"        this.setRaza(raza);",
+				"    }",
+				"",
+				"    // GETTER para raza",
+				"    getRaza() {",
+				"        return this._raza;",
+				"    }",
+				"",
+				"    // SETTER con validación para raza",
+				"    setRaza(raza) {",
+				"        if (raza && raza.trim() !== \"\") {",
+				"            this._raza = raza;",
+				"        } else {",
+				"            throw new Error(\"La raza no puede estar vacía.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método adicional",
+				"    ladrar() {",
+				"        console.log(`${this.getNombre()} está ladrando: ¡Guau Guau!`);",
+				"    }",
+				"}"
+			],
+				"description": "Clase Perro que extiende de Animal, con propiedad raza y método ladrar."
+	},
+	"Clase Punto2D": {
+		"prefix": "classPunto2D",
+			"body": [
+				"export class Punto2D {",
+				"    constructor(x, y) {",
+				"        this.setX(x);",
+				"        this.setY(y);",
+				"    }",
+				"",
+				"    // GETTERS",
+				"    getX() {",
+				"        return this._x;",
+				"    }",
+				"",
+				"    getY() {",
+				"        return this._y;",
+				"    }",
+				"",
+				"    // SETTERS con validación",
+				"    setX(x) {",
+				"        if (!isNaN(x)) {",
+				"            this._x = x;",
+				"        } else {",
+				"            throw new Error(\"La coordenada X debe ser un número válido.\");",
+				"        }",
+				"    }",
+				"",
+				"    setY(y) {",
+				"        if (!isNaN(y)) {",
+				"            this._y = y;",
+				"        } else {",
+				"            throw new Error(\"La coordenada Y debe ser un número válido.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método adicional: calcular distancia al origen",
+				"    distanciaAlOrigen() {",
+				"        return Math.sqrt(this._x ** 2 + this._y ** 2);",
+				"    }",
+				"",
+				"    mostrarCoordenadas() {",
+				"        console.log(`Coordenadas: (${this._x}, ${this._y})`);",
+				"    }",
+				"}"
+			],
+				"description": "Clase Punto2D con coordenadas X, Y y un método para calcular la distancia al origen."
+	},
+	"Clase Figura2D usando Punto2D": {
+		"prefix": "claseFigura2D",
+			"body": [
+				"import { Punto2D } from './Punto2D.js';",
+				"",
+				"export class Figura2D {",
+				"    constructor(nombre, puntos = []) {",
+				"        this.setNombre(nombre);",
+				"        this.setPuntos(puntos);",
+				"    }",
+				"",
+				"    // GETTERS",
+				"    getNombre() {",
+				"        return this._nombre;",
+				"    }",
+				"",
+				"    getPuntos() {",
+				"        return this._puntos;",
+				"    }",
+				"",
+				"    // SETTERS con validación",
+				"    setNombre(nombre) {",
+				"        if (nombre && nombre.trim() !== \"\") {",
+				"            this._nombre = nombre;",
+				"        } else {",
+				"            throw new Error(\"El nombre de la figura no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    setPuntos(puntos) {",
+				"        if (Array.isArray(puntos) && puntos.every(p => p instanceof Punto2D)) {",
+				"            this._puntos = puntos;",
+				"        } else {",
+				"            throw new Error(\"Los puntos deben ser instancias de Punto2D.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método para agregar un punto",
+				"    agregarPunto(punto) {",
+				"        if (punto instanceof Punto2D) {",
+				"            this._puntos.push(punto);",
+				"        } else {",
+				"            throw new Error(\"El punto debe ser una instancia de Punto2D.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método para mostrar información de la figura",
+				"    mostrarInformacion() {",
+				"        console.log(`Figura: ${this.getNombre()}`);",
+				"        this._puntos.forEach((punto, index) => {",
+				"            console.log(`Punto ${index + 1}: (${punto.getX()}, ${punto.getY()})`);",
+				"        });",
+				"    }",
+				"}"
+			],
+				"description": "Clase Figura2D que utiliza la clase Punto2D para definir figuras geométricas."
+	},
+	"Crear Clase Genérica": {
+		"prefix": "claseGenerica",
+			"body": [
+				"class ${1:NombreClase} {",
+				"    constructor(${2:prop1}, ${3:prop2}) {",
+				"        this.${2:prop1} = ${2:prop1};",
+				"        this.${3:prop2} = ${3:prop2};",
+				"    }",
+				"",
+				"    // Getter para ${2:prop1}",
+				"    get ${2:prop1}() {",
+				"        return this._${2:prop1};",
+				"    }",
+				"",
+				"    // Setter para ${2:prop1}",
+				"    set ${2:prop1}(value) {",
+				"        if (value) {",
+				"            this._${2:prop1} = value;",
+				"        } else {",
+				"            console.error(\"${2:prop1} no puede estar vacío.\");",
+				"        }",
+				"    }",
+				"",
+				"    // Método básico para mostrar información",
+				"    mostrarInfo() {",
+				"        console.log(`Propiedad 1: ${this.${2:prop1}}, Propiedad 2: ${this.${3:prop2}}`);",
+				"    }",
+				"}",
+				"",
+				"// Ejemplo de uso:",
+				"const ${4:objeto} = new ${1:NombreClase}(\"${5:valor1}\", \"${6:valor2}\");",
+				"${4:objeto}.mostrarInfo();"
+			],
+				"description": "Crea una clase con propiedades, getters, setters y un método básico."
+	},
+	"setTimeout Snippet": {
+		"prefix": "settimeout",
+			"body": [
+				"// setTimeout: Ejecuta una función después de un tiempo específico",
+				"setTimeout(() => {",
+				"    // Código a ejecutar después de X milisegundos",
+				"    console.log(\"${1:Tiempo cumplido: Mensaje}\");",
+				"}, ${2:1000}); // Tiempo en milisegundos (por defecto: 1000 = 1 segundo)"
+			],
+				"description": "Snippet para setTimeout con parámetros personalizables."
+	},
+	"setInterval Snippet": {
+		"prefix": "setinterval",
+			"body": [
+				"// setInterval: Ejecuta una función repetidamente en intervalos de tiempo",
+				"const ${1:intervalo} = setInterval(() => {",
+				"    // Código a ejecutar cada X milisegundos",
+				"    console.log(\"${2:Intervalo ejecutado: Mensaje}\");",
+				"}, ${3:1000}); // Intervalo en milisegundos (por defecto: 1000 = 1 segundo)"
+			],
+				"description": "Snippet para setInterval con parámetros personalizables."
+	},
+	"setInterval y clearInterval": {
+		"prefix": "setintervalclear",
+			"body": [
+				"// setInterval: Ejecuta una función repetidamente en intervalos de tiempo",
+				"const ${1:intervalo} = setInterval(() => {",
+				"    // Código a ejecutar cada X milisegundos",
+				"    console.log(\"${2:Intervalo ejecutado: Mensaje}\");",
+				"}, ${3:1000}); // Intervalo en milisegundos",
+				"",
+				"// clearInterval: Detiene el setInterval después de un tiempo específico",
+				"setTimeout(() => {",
+				"    clearInterval(${1:intervalo});",
+				"    console.log(\"${4:Intervalo detenido}\");",
+				"}, ${5:5000}); // Tiempo en milisegundos para detener el intervalo"
+			],
+				"description": "Snippet combinado de setInterval y clearInterval con parámetros personalizables."
+	},
+	"regexDni": {
+		"prefix": "regexDni",
+			"body": [
+				"const regexDni = /^[0-9]{8}[A-Z]$/; ${1:// 8 números seguidos de una letra mayúscula}"
+			],
+				"description": "Expresión regular para validar un DNI (8 números seguidos de una letra mayúscula)."
+	},
+	"regexTelefono": {
+		"prefix": "regexTelefono",
+			"body": [
+				"const regexTelefono = /^[679]{1}[0-9]{8}$/; ${1:// Teléfono español válido (comienza por 6, 7 o 9 y tiene 9 dígitos)}"
+			],
+				"description": "Expresión regular para validar un número de teléfono español."
+	},
+	"regexFechaGuion": {
+		"prefix": "regexFechaGuion",
+			"body": [
+				"const regexFechaGuion = /^(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(\\d{4})$/; ${1:// Fecha formato dd-mm-YYYY}"
+			],
+				"description": "Expresión regular para validar una fecha en formato dd-mm-YYYY."
+	},
+	"regexFechaSlash": {
+		"prefix": "regexFechaSlash",
+			"body": [
+				"const regexFechaSlash = /^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[0-2])\\/(\\d{4})$/; ${1:// Fecha formato dd/mm/YYYY}"
+			],
+				"description": "Expresión regular para validar una fecha en formato dd/mm/YYYY."
+	},
+	"validarEntrada": {
+		"prefix": "validarEntrada",
+			"body": [
+				"function validarEntrada(valor, regex) {",
+				"    return regex.test(valor); ${1:// Valida la entrada usando la expresión regular proporcionada}"
+			],
+				"description": "Función genérica para validar una entrada usando una expresión regular."
+	},
+	"regexNombre": {
+		"prefix": "regexNombre",
+			"body": [
+				"const ${1:regexNombre} = /^[A-Za-z${2:ÁÉÍÓÚáéíóúÑñ}]+(\\s[A-Za-z${2:ÁÉÍÓÚáéíóúÑñ}]+)*$/; ${3:// Nombre sin números ni caracteres especiales, permite espacios entre palabras}"
+			],
+				"description": "Expresión regular para validar nombres con una o más palabras, sin números ni caracteres especiales."
+	},
+	"ordenarArrayPorPropiedad": {
+		"prefix": "ordenarArrayPorPropiedad",
+			"body": [
+				"const ${1:propiedad} = '${2:propiedadObj}';",
+				"${3:arrayObjetos}.sort((a, b) => {",
+				"    if (a[$1] < b[$1]) return -1;",
+				"    if (a[$1] > b[$1]) return 1;",
+				"    return 0;",
+				"});"
+			],
+				"description": "Ordena un array de objetos por la propiedad especificada."
+	},
+	"Array Methods Cheatsheet": {
+		"prefix": "arrayHelp",
+			"body": [
+				"// 📌 Creación y manipulación de arrays",
+				"let array = [${1:1, 2, 3, 4, 5}];",
+				"",
+				"// 🔹 Métodos de acceso",
+				"console.log(array.length);     // Longitud del array",
+				"console.log(array[0]);        // Primer elemento",
+				"console.log(array.at(-1));    // Último elemento",
+				"",
+				"// 🔹 Agregar y eliminar elementos",
+				"array.push(${2:6});          // Agrega al final",
+				"array.pop();                 // Elimina el último",
+				"array.unshift(${3:0});       // Agrega al inicio",
+				"array.shift();               // Elimina el primero",
+				"",
+				"// 🔹 Buscar en un array",
+				"console.log(array.includes(${4:3}));  // true si contiene el valor",
+				"console.log(array.indexOf(${5:2}));   // Índice del valor (o -1 si no está)",
+				"console.log(array.lastIndexOf(${6:2})); // Última ocurrencia del valor",
+				"console.log(array.find(x => x > 3));  // Primer elemento > 3",
+				"console.log(array.findIndex(x => x > 3));  // Índice del primer elemento > 3",
+				"console.log(array.findLast(x => x > 3));  // Último elemento > 3",
+				"console.log(array.findLastIndex(x => x > 3));  // Último índice del elemento > 3",
+				"",
+				"// 🔹 Filtrar y transformar",
+				"let newArray = array.map(x => x * 2);   // Duplicar valores",
+				"let filteredArray = array.filter(x => x > 2); // Filtrar valores mayores que 2",
+				"let sum = array.reduce((acc, x) => acc + x, 0); // Suma total",
+				"let sumRight = array.reduceRight((acc, x) => acc + x, 0); // Suma de derecha a izquierda",
+				"",
+				"// 🔹 Evaluar condiciones",
+				"console.log(array.some(x => x > 3));  // true si al menos un elemento cumple",
+				"console.log(array.every(x => x > 3)); // true si todos los elementos cumplen",
+				"",
+				"// 🔹 Ordenar y modificar",
+				"array.sort((a, b) => a - b);   // Ordenar numéricamente ascendente",
+				"array.reverse();               // Invertir el array",
+				"array.splice(${7:2}, ${8:1});  // Elimina 1 elemento desde el índice 2",
+				"let slicedArray = array.slice(${9:1}, ${10:3}); // Extrae sin modificar original",
+				"",
+				"// 🔹 Iterar sobre un array",
+				"array.forEach(x => console.log(x)); // Iterar y mostrar cada elemento",
+				"for (let [index, value] of array.entries()) console.log(index, value); // Iterar con índice y valor",
+				"",
+				"// 🔹 Convertir arrays",
+				"console.log(array.join(', ')); // Convierte en string con separador",
+				"console.log(Array.from('hello')); // Convierte string a array",
+				"console.log(Array.isArray(array));  // Verifica si es un array",
+				"",
+				"// 🔹 Obtener iteradores",
+				"let iterKeys = array.keys();  // Iterador de claves (índices)",
+				"let iterValues = array.values(); // Iterador de valores",
+				"let iterEntries = array.entries(); // Iterador de pares índice-valor",
+				"",
+				"// 🔹 Combinar y clonar",
+				"let mergedArray = array.concat(${11:[6, 7, 8]});  // Unir arrays",
+				"let copiedArray = [...array];  // Copia con spread operator",
+				"",
+				"// 🔹 Llenar y modificar",
+				"array.fill(${12:0}, ${13:1}, ${14:3}); // Rellena con 0 desde índice 1 hasta 3",
+				"",
+				"// 🔹 Métodos avanzados",
+				"let flatArray = [[1,2], [3,4]].flat(); // Aplanar un nivel",
+				"let deepFlatArray = [[[1]], [2, 3]].flat(Infinity); // Aplanar completamente",
+				"// Agrupar por pares e impares (experimental, requiere polyfill en algunos navegadores)",
+				"let groupedArray = Object.groupBy(array, x => x % 2 === 0 ? 'pares' : 'impares');",
+				"",
+				"console.log(array); // Resultado final"
+			],
+				"description": "Snippets con los métodos de arrays en JavaScript"
+	},
+	"Crear Clase Generica": {
+		"prefix": "claseHelp",
+			"body": [
+				"class ${1:Generica} {",
+				"",
+				"    constructor(${2:atributo1}, ${3:atributo2}) {",
+				"        this.${2} = ${1}.metodoValidador${4:Nombre}(${2});",
+				"        this.${3} = ${3};",
+				"    }",
+				"",
+				"    ${5:metodoGenerico}(${6:datosDeEntrada}) {",
+				"        return ${6};",
+				"    }",
+				"",
+				"    get${2}() {",
+				"        return this.${2};",
+				"    }",
+				"",
+				"    set${2}(${2}) {",
+				"        this.${2} = ${1}.metodoValidador${4:Nombre}(${2});",
+				"    }",
+				"",
+				"    static metodoValidador${4:Nombre}(${7:atributoAvalidar}) {",
+				"        const ${8:regexAtributo1} = /\\d/;",
+				"        return ${7};",
+				"    }",
+				"",
+				"    static metodoComparador(${9:oGenerico1}, ${10:oGenerico2}) {",
+				"        console.log(${9} instanceof ${1});",
+				"        if (!(${9} instanceof ${1} && ${10} instanceof ${1})) {",
+				"            throw new Error(\"ERROR. No son lo mismo\");",
+				"        }",
+				"        if (${9}.${2} > ${10}.${2}) return 1;",
+				"        if (${9}.${2} < ${10}.${2}) return -1;",
+				"        return 0;",
+				"    }",
+				"}",
+				"",
+				"// Ejemplo de uso",
+				"const objeto1 = new ${1}(\"valor1\", \"valor2\");",
+				"const objeto2 = new ${1}(\"valor3\", \"valor4\");",
+				"",
+				"console.log(${1}.metodoComparador(objeto1, objeto2));"
+			],
+				"description": "Crea una clase en JavaScript con validaciones, métodos estáticos y comparación, con placeholders dinámicos."
+	},
+	"Lanzar Error": {
+		"prefix": "tne",
+			"body": [
+				"throw new Error(\"${1:Mensaje de error}\");"
+			],
+				"description": "Genera un throw new Error() con un mensaje personalizado."
+	},
+	"Event Methods Cheatsheet": {
+		"prefix": "eventosHelp",
+			"body": [
+				"// 📌 Manejo de Eventos en JavaScript",
+				"const elemento = document.querySelector('${1:#miElemento}');",
+				"",
+				"// 🔹 Eventos del Ratón",
+				"elemento.addEventListener('click', () => { console.log('Clic detectado'); }); // Clic en el elemento",
+				"elemento.addEventListener('dblclick', () => { console.log('Doble clic'); }); // Doble clic",
+				"elemento.addEventListener('mouseover', () => { console.log('Cursor sobre el elemento'); }); // Cursor sobre",
+				"elemento.addEventListener('mouseout', () => { console.log('Cursor sale del elemento'); }); // Cursor sale",
+				"elemento.addEventListener('mousedown', () => { console.log('Botón presionado'); }); // Botón presionado",
+				"elemento.addEventListener('mouseup', () => { console.log('Botón liberado'); }); // Botón liberado",
+				"elemento.addEventListener('mousemove', (e) => { console.log(`Movimiento: ${e.clientX}, ${e.clientY}`); }); // Movimiento del ratón",
+				"",
+				"// 🔹 Eventos del Teclado",
+				"document.addEventListener('keydown', (e) => {",
+				"  console.log(`Tecla presionada: ${e.key}`);",
+				"  switch(e.key) {",
+				"    case 'ArrowUp': console.log('Flecha arriba presionada'); break;",
+				"    case 'ArrowDown': console.log('Flecha abajo presionada'); break;",
+				"    case 'ArrowLeft': console.log('Flecha izquierda presionada'); break;",
+				"    case 'ArrowRight': console.log('Flecha derecha presionada'); break;",
+				"  }",
+				"});",
+				"",
+				"document.addEventListener('keyup', (e) => { console.log(`Tecla liberada: ${e.key}`); }); // Al soltar",
+				"document.addEventListener('keypress', (e) => { console.log(`Tecla pulsada: ${e.key}`); }); // Pulsación (obsoleto)",
+				"",
+				"// 🔹 Eventos de Formularios",
+				"const form = document.querySelector('${2:#miFormulario}');",
+				"form.addEventListener('submit', (e) => {",
+				"  e.preventDefault(); // Evita el envío del formulario",
+				"  console.log('Formulario enviado');",
+				"});",
+				"",
+				"const input = document.querySelector('${3:#miInput}');",
+				"input.addEventListener('change', () => { console.log('Valor cambiado'); }); // Cambio de valor",
+				"input.addEventListener('focus', () => { console.log('Input enfocado'); }); // Enfoque",
+				"input.addEventListener('blur', () => { console.log('Input desenfocado'); }); // Desenfoque",
+				"input.addEventListener('input', () => { console.log(`Valor actual: ${input.value}`); }); // Entrada de texto",
+				"",
+				"// 🔹 Eventos de la Ventana",
+				"window.addEventListener('load', () => { console.log('Página cargada'); }); // Carga inicial",
+				"window.addEventListener('resize', () => { console.log(`Ancho: ${window.innerWidth}, Alto: ${window.innerHeight}`); }); // Cambio de tamaño",
+				"window.addEventListener('scroll', () => { console.log('Scrolling detectado'); }); // Desplazamiento",
+				"window.addEventListener('beforeunload', (e) => {",
+				"  e.preventDefault();",
+				"  e.returnValue = ''; // Advertencia antes de salir",
+				"});",
+				"",
+				"// 🔹 Delegación de Eventos",
+				"document.addEventListener('click', (e) => {",
+				"  if (e.target.matches('${4:.boton}')) {",
+				"    console.log('Clic en un botón delegado');",
+				"  }",
+				"});",
+				"",
+				"console.log('Eventos listos'); // Resultado final"
+			],
+				"description": "Snippets con los principales eventos en JavaScript"
+	},
+	"Fetch API Template": {
+		"prefix": "fetch",
+			"body": [
+				"fetch(\"${1:https://jsonplaceholder.typicode.com/users}\")",
+				"    .then(respuesta => respuesta.json()) // Convertir la respuesta a JSON",
+				"    .then(respJson => {",
+				"        console.log('Datos obtenidos:', respJson);",
+				"    })",
+				"    .catch(errorObjeto => {",
+				"        if (typeof errorObjeto !== \"string\") {",
+				"            throw new Error(\"Se rompió la conexión\");",
+				"        } else {",
+				"            console.error(\"Error recibido:\", errorObjeto);",
+				"        }",
+				"    });"
+			],
+				"description": "Realiza una petición fetch con manejo de JSON y captura de errores."
+	},
+	"Async Function Template": {
+		"prefix": "funcionAsincrona",
+			"body": [
+				"async function ${1:obtenerDatos}() {",
+				"    try {",
+				"        const respuesta = await fetch(\"${2:https://jsonplaceholder.typicode.com/users}\");",
+				"        if (!respuesta.ok) throw new Error(`Error ${respuesta.status}: ${respuesta.statusText}`);",
+				"        const data = await respuesta.json();",
+				"        console.log(\"✅ Datos obtenidos:\", data);",
+				"        return data; // Devuelve los datos obtenidos",
+				"    } catch (error) {",
+				"        console.error(\"❌ Error en la función asíncrona:\", error.message);",
+				"        return null; // Manejo del error",
+				"    }",
+				"}",
+				"",
+				"// 🔹 Llamar a la función asíncrona",
+				"${3:obtenerDatos}().then(datos => {",
+				"    if (datos) {",
+				"        console.log(\"✅ Procesando datos:\", datos);",
+				"    } else {",
+				"        console.log(\"❌ No se pudieron obtener datos.\");",
+				"    }",
+				"});"
+			],
+				"description": "Crea una función asíncrona que usa fetch(), maneja errores con try/catch y devuelve los datos."
+	},
+	"arrayMapHelp": {
+		"prefix": "arrayMapHelp",
+			"body": [
+				"// 📌 Uso del método map() con array de objetos",
+				"const objetos = ${1:[{ id: 1, nombre: 'Juan' }, { id: 2, nombre: 'Ana' }, { id: 3, nombre: 'Pedro' }]};",
+				"",
+				"// 🔹 1. Extraer un array de nombres",
+				"const nombres = objetos.map(obj => obj.nombre);",
+				"console.log(nombres); // ['Juan', 'Ana', 'Pedro']",
+				"",
+				"// 🔹 2. Extraer un array de IDs",
+				"const ids = objetos.map(obj => obj.id);",
+				"console.log(ids); // [1, 2, 3]",
+				"",
+				"// 🔹 3. Crear un nuevo array de objetos con una nueva propiedad",
+				"const conActivo = objetos.map(obj => ({ ...obj, activo: true }));",
+				"console.log(conActivo); // [{ id: 1, nombre: 'Juan', activo: true }, ...]",
+				"",
+				"// 🔹 4. Convertir objetos en strings descriptivos",
+				"const descripciones = objetos.map(obj => `ID: ${obj.id}, Nombre: ${obj.nombre}`);",
+				"console.log(descripciones); // ['ID: 1, Nombre: Juan', ...]",
+				"",
+				"// 🔹 5. Crear un array con una estructura modificada",
+				"const nuevosObjetos = objetos.map(({ id, nombre }) => ({ identificador: id, usuario: nombre }));",
+				"console.log(nuevosObjetos);"
+			],
+				"description": "Transforma un array de objetos usando map()"
+	},
+	"arraySomeHelp": {
+		"prefix": "arraySomeHelp",
+			"body": [
+				"// 📌 Uso del método some() con array de objetos",
+				"const usuarios = ${1:[{ id: 1, nombre: 'Juan', activo: true }, { id: 2, nombre: 'Ana', activo: false }]};",
+				"",
+				"// 🔹 1. Verificar si hay algún usuario activo",
+				"const hayActivos = usuarios.some(user => user.activo);",
+				"console.log(hayActivos); // true",
+				"",
+				"// 🔹 2. Verificar si existe un usuario con ID específico",
+				"const existeUsuario = usuarios.some(user => user.id === ${2:2});",
+				"console.log(existeUsuario); // true o false",
+				"",
+				"// 🔹 3. Validar si hay usuarios con un nombre específico",
+				"const existeNombre = usuarios.some(user => user.nombre === '${3:Ana}');",
+				"console.log(existeNombre); // true o false",
+				"",
+				"// 🔹 4. Verificar si todos los usuarios están activos",
+				"const todosActivos = usuarios.every(user => user.activo);",
+				"console.log(todosActivos); // false",
+				"",
+				"// 🔹 5. Comprobar si hay algún usuario con más de 3 caracteres en su nombre",
+				"const nombreLargo = usuarios.some(user => user.nombre.length > 3);",
+				"console.log(nombreLargo); // true"
+			],
+				"description": "Verifica condiciones en arrays de objetos usando some()"
+	},
+	"arrayFilterHelp": {
+		"prefix": "arrayFilterHelp",
+			"body": [
+				"// 📌 Uso del método filter() con array de objetos",
+				"const productos = ${1:[{ id: 1, nombre: 'Laptop', precio: 1200 }, { id: 2, nombre: 'Mouse', precio: 25 }]};",
+				"",
+				"// 🔹 1. Filtrar productos caros (precio > 100)",
+				"const productosCaros = productos.filter(prod => prod.precio > 100);",
+				"console.log(productosCaros);",
+				"",
+				"// 🔹 2. Obtener solo los productos con nombres de más de 5 letras",
+				"const nombreLargo = productos.filter(prod => prod.nombre.length > 5);",
+				"console.log(nombreLargo);",
+				"",
+				"// 🔹 3. Filtrar productos que NO sean 'Mouse'",
+				"const sinMouse = productos.filter(prod => prod.nombre !== 'Mouse');",
+				"console.log(sinMouse);",
+				"",
+				"// 🔹 4. Filtrar productos con ID mayor a 1",
+				"const idsAltos = productos.filter(prod => prod.id > 1);",
+				"console.log(idsAltos);",
+				"",
+				"// 🔹 5. Filtrar productos cuyo precio sea múltiplo de 5",
+				"const multiploDe5 = productos.filter(prod => prod.precio % 5 === 0);",
+				"console.log(multiploDe5);"
+			],
+				"description": "Filtra elementos en un array de objetos usando filter()"
+	}
+}
+	 */}
